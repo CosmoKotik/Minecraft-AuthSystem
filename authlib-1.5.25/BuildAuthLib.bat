@@ -13,7 +13,8 @@
 ::javac -cp libraries\* src\*.java
 
 echo Starting building .jar file
-jar cvf out\authlib-1.5.25.jar -C build .
+::jar cvfm out\authlib-1.5.25.jar manifest.txt -C build .
+jar cvfM out\authlib-1.5.25.jar -C build .
 
 if errorlevel 1 (
   echo Failed to build .jar file
