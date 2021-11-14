@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="oshi-core-5.7.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libraries/com/github/oshi/oshi-core/5.7.5/oshi-core-5.7.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

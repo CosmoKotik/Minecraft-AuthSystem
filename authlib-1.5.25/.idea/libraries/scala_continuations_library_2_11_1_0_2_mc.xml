@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="scala-continuations-library_2.11-1.0.2_mc">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libraries/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2_mc/scala-continuations-library_2.11-1.0.2_mc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

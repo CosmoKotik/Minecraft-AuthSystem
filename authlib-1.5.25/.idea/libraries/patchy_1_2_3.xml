@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="patchy-1.2.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libraries/com/mojang/patchy/1.2.3/patchy-1.2.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

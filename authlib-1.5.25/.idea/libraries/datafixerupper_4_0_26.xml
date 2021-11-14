@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="datafixerupper-4.0.26">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libraries/com/mojang/datafixerupper/4.0.26/datafixerupper-4.0.26.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
