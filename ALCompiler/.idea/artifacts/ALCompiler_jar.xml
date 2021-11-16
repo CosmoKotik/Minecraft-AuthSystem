@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ALCompiler:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ALCompiler_jar</output-path>
+    <root id="archive" name="ALCompiler.jar">
+      <element id="module-output" name="ALCompiler" />
+    </root>
+  </artifact>
+</component>
