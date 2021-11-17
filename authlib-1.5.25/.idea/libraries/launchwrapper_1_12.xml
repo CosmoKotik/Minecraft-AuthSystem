@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="launchwrapper-1.12">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libraries/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

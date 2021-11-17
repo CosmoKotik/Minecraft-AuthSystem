@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="minecraft_server">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libraries/com/mojang/authlib/TEST/minecraft_server.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

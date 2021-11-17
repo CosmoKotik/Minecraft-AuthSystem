@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="60593f14-57b1-48c0-b847-8a0bb06f4778" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/authlib-1.5.25.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ALCompiler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ALCompiler/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ALCompiler/src/com/cosmoapps/ALCompillerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ALCompiler/src/com/cosmoapps/ALCompillerClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/authlib_1_5_25_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/1_10_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/1_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/2_9_4_nightly_20150209.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/3_2_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/3_2_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/3_2_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/3_2_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/3_2_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/3_2_26.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/akka_actor_2_11_2_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/asm_all_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/asm_debug_all_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/authlib_1_5_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/authlib_1_5_251.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/authlib_2_1_28.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/authlib_2_3_31.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/blocklist_1_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/brigadier_1_0_17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/brigadier_1_0_18.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/codecjorbis_20101023.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/codecwav_20101023.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_codec_1_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_compress_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_io_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_logging_1_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/config_1_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/datafixerupper_4_0_26.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/fastutil_7_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/fastutil_8_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/forge_1_12_2_14_23_5_2855.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/guava_21_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/httpclient_4_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/httpcore_4_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/icu4j_66_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/icu4j_core_mojang_51_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javabridge_1_0_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javabridge_1_1_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jinput_2_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jinput_platform_2_0_5_natives_windows.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jline_3_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jna_4_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jna_5_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jna_platform_5_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jopt_simple_4_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jopt_simple_5_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jutils_1_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/launchwrapper_1_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/launchwrapper_1_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/libraryjavasound_20101123.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/librarylwjglopenal_20100824.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_api_2_14_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_api_2_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_core_2_14_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_core_2_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_slf4j18_impl_2_14_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl_2_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl_2_9_4_nightly_20150209.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl_platform_2_9_0_natives_windows.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl_util_2_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl_util_2_9_4_nightly_20150209.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lzma_0_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/maven_artifact_3_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/minecraft_server.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/netty_all_4_1_25_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/netty_all_4_1_9_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/oshi_core_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/oshi_core_5_7_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/patchy_1_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/patchy_2_1_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/platform_3_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/realms_1_10_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_actors_migration_2_11_1_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_compiler_2_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_continuations_library_2_11_1_0_2_mc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_continuations_plugin_2_11_1_1_0_2_mc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_library_2_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_parser_combinators_2_11_1_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_reflect_2_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_swing_2_11_1_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_xml_2_11_1_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/slf4j_api_1_8_0_beta4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/soundsystem_20120107.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/trove4j_3_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/vecmath_1_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildAuthLib - Copy.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildAuthLib.bat" beforeDir="false" afterPath="$PROJECT_DIR$/BuildAuthLib.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/META-INF/org/apache/logging/log4j/core/config/plugins/Log4j2Plugins.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/Agent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/AuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/BaseAuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/BaseUserAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/GameProfile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/GameProfileRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/HttpAuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/HttpUserAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/ProfileLookupCallback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/UserAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/UserType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/exceptions/AuthenticationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/exceptions/AuthenticationUnavailableException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/exceptions/InvalidCredentialsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/exceptions/UserMigratedException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/legacy/LegacyAuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/legacy/LegacyMinecraftSessionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/legacy/LegacyUserAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/minecraft/BaseMinecraftSessionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/minecraft/HttpMinecraftSessionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/minecraft/InsecureTextureException$MissingTextureException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/minecraft/InsecureTextureException$OutdatedTextureException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/minecraft/InsecureTextureException$WrongTextureOwnerException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/minecraft/InsecureTextureException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/minecraft/MinecraftProfileTexture$Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/minecraft/MinecraftProfileTexture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/minecraft/MinecraftSessionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/properties/Property.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/properties/PropertyMap$Serializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/properties/PropertyMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/ProfileIncompleteException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/ProfileNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/YggdrasilAuthenticationService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/YggdrasilAuthenticationService$GameProfileSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/YggdrasilAuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/request/AuthenticationRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/request/InvalidateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/request/JoinMinecraftServerRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/request/RefreshRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/request/ValidateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/response/AuthenticationResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/response/HasJoinedMinecraftServerResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/response/MinecraftProfilePropertiesResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/response/MinecraftTexturesPayload.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/response/ProfileSearchResultsResponse$Serializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/response/ProfileSearchResultsResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/response/RefreshResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/response/Response.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/authlib/yggdrasil/response/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/util/QueueLogAppender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/com/mojang/util/UUIDTypeAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/yggdrasil_session_pubkey.der" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libraries/commons-codec-1.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libraries/commons-io-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libraries/commons-lang3-3.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libraries/gson-2.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libraries/guava-21.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libraries/log4j-api-2.14.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libraries/log4j-api-2.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libraries/log4j-core-2.14.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libraries/log4j-core-2.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/authlib-1.5.25.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/authlib-1.5.25.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/Agent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/AuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/BaseAuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/BaseUserAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/GameProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/GameProfileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/HttpAuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/HttpUserAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/ProfileLookupCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/UserAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/UserType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/exceptions/AuthenticationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/exceptions/AuthenticationUnavailableException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/exceptions/InvalidCredentialsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/exceptions/UserMigratedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/legacy/LegacyAuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/legacy/LegacyMinecraftSessionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/legacy/LegacyUserAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/minecraft/BaseMinecraftSessionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/minecraft/HttpMinecraftSessionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/minecraft/InsecureTextureException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/minecraft/MinecraftProfileTexture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/minecraft/MinecraftSessionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/properties/Property.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/properties/PropertyMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/ProfileIncompleteException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/ProfileNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/YggdrasilAuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/request/AuthenticationRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/request/InvalidateRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/request/JoinMinecraftServerRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/request/RefreshRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/request/ValidateRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/response/AuthenticationResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/response/HasJoinedMinecraftServerResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/response/MinecraftProfilePropertiesResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/response/MinecraftTexturesPayload.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/response/ProfileSearchResultsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/response/RefreshResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/response/Response.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/authlib/yggdrasil/response/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/util/QueueLogAppender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mojang/util/UUIDTypeAdapter.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="20yqJzOAlylEX4nAHjQByC8WAAH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15136719" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="authlib-1.5.25 [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.authlib-1.5.25 [dependencies]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="60593f14-57b1-48c0-b847-8a0bb06f4778" name="Default Changelist" comment="" />
+      <created>1637027108805</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637027108805</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

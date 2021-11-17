@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="lwjgl-platform-2.9.0-natives-windows">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libraries/org/lwjgl/lwjgl/lwjgl-platform/2.9.0/lwjgl-platform-2.9.0-natives-windows.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

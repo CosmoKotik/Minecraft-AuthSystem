@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="javabridge-1.1.23">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libraries/com/mojang/javabridge/1.1.23/javabridge-1.1.23.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

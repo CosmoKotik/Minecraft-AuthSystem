@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="jna-platform-5.8.0">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libraries/net/java/dev/jna/jna-platform/5.8.0/jna-platform-5.8.0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

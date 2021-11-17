@@ -17,11 +17,11 @@ public class ALCompillerClass {
         System.out.println("Patching YggdrasilUserAuthentication.java");
         List<String> fileContents = Files.readAllLines(Paths.get(filePath));
         fileContents.set(29, "    private static final String BASE_URL = \"https://" + ipAddr + "/\";");
-        fileContents.set(31, "    private static final URL ROUTE_AUTHENTICATE = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "\");");
-        fileContents.set(33, "    private static final URL ROUTE_REFRESH = HttpAuthenticationService.constantURL(\"" + ipAddr + "\");");
-        fileContents.set(35, "    private static final URL ROUTE_VALIDATE = HttpAuthenticationService.constantURL(\"" + ipAddr + "\");");
-        fileContents.set(37, "    private static final URL ROUTE_INVALIDATE = HttpAuthenticationService.constantURL(\"" + ipAddr + "\");");
-        fileContents.set(39, "    private static final URL ROUTE_SIGNOUT = HttpAuthenticationService.constantURL(\"" + ipAddr + "\");");
+        fileContents.set(31, "    private static final URL ROUTE_AUTHENTICATE = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/authenticate\");");
+        fileContents.set(33, "    private static final URL ROUTE_REFRESH = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/refresh\");");
+        fileContents.set(35, "    private static final URL ROUTE_VALIDATE = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/validate\");");
+        fileContents.set(37, "    private static final URL ROUTE_INVALIDATE = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/invalidate\");");
+        fileContents.set(39, "    private static final URL ROUTE_SIGNOUT = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/signout\");");
         Files.write(Paths.get(filePath), fileContents);
         System.out.println("YggdrasilUserAuthentication.java is Patched");
 
@@ -54,8 +54,8 @@ public class ALCompillerClass {
         filePath = Path + "\\com\\mojang\\authlib\\legacy\\LegacyMinecraftSessionService.java";
         fileContents = Files.readAllLines(Paths.get(filePath));
         fileContents.set(16, "    private static final String BASE_URL = \"http://" + ipAddr + "/game/\";");
-        fileContents.set(17, "    private static final URL CHECK_URL = HttpAuthenticationService.constantURL(\"http://" + ipAddr + "/game/checkserver.jsp\");");
         fileContents.set(18, "    private static final URL JOIN_URL = HttpAuthenticationService.constantURL(\"http://" + ipAddr + "/game/joinserver.jsp\");");
+        fileContents.set(20, "    private static final URL CHECK_URL = HttpAuthenticationService.constantURL(\"http://" + ipAddr + "/game/checkserver.jsp\");");
         Files.write(Paths.get(filePath), fileContents);
         System.out.println("LegacyMinecraftSessionService.java is Patched");
     }
