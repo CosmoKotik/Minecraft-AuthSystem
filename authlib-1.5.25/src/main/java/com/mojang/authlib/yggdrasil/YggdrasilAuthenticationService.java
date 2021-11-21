@@ -20,6 +20,7 @@ import com.mojang.authlib.exceptions.InvalidCredentialsException;
 import com.mojang.authlib.exceptions.UserMigratedException;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.authlib.properties.PropertyMap;
+import com.mojang.authlib.properties.PropertyMap.Serializer;
 import com.mojang.authlib.yggdrasil.response.ProfileSearchResultsResponse;
 import com.mojang.authlib.yggdrasil.response.Response;
 import com.mojang.util.UUIDTypeAdapter;
@@ -32,7 +33,6 @@ import org.apache.commons.lang3.StringUtils;
 
 public class YggdrasilAuthenticationService extends HttpAuthenticationService {
     private final String clientToken;
-
     private final Gson gson;
 
     public YggdrasilAuthenticationService(Proxy proxy, String clientToken) {
@@ -40,18 +40,18 @@ public class YggdrasilAuthenticationService extends HttpAuthenticationService {
         this.clientToken = clientToken;
         GsonBuilder builder = new GsonBuilder();
         builder.registerTypeAdapter(GameProfile.class, new GameProfileSerializer());
-        builder.registerTypeAdapter(PropertyMap.class, new PropertyMap.Serializer());
+        builder.registerTypeAdapter(PropertyMap.class, new Serializer());
         builder.registerTypeAdapter(UUID.class, new UUIDTypeAdapter());
         builder.registerTypeAdapter(ProfileSearchResultsResponse.class, new ProfileSearchResultsResponse.Serializer());
         this.gson = builder.create();
     }
 
     public UserAuthentication createUserAuthentication(Agent agent) {
-        return (UserAuthentication)new YggdrasilUserAuthentication(this, agent);
+        return new YggdrasilUserAuthentication(this, agent);
     }
 
     public MinecraftSessionService createMinecraftSessionService() {
-        return (MinecraftSessionService)new YggdrasilMinecraftSessionService(this);
+        return new YggdrasilMinecraftSessionService(this);
     }
 
     public GameProfileRepository createProfileRepository() {
@@ -60,24 +60,27 @@ public class YggdrasilAuthenticationService extends HttpAuthenticationService {
 
     protected <T extends Response> T makeRequest(URL url, Object input, Class<T> classOfT) throws AuthenticationException {
         try {
-            String jsonResult = (input == null) ? performGetRequest(url) : performPostRequest(url, this.gson.toJson(input), "application/json");
-            Response response = (Response)this.gson.fromJson(jsonResult, classOfT);
-            if (response == null)
+            String jsonResult = input == null ? this.performGetRequest(url) : this.performPostRequest(url, this.gson.toJson(input), "application/json");
+            T result = (T) this.gson.fromJson(jsonResult, classOfT);
+            if (result == null) {
                 return null;
-            if (StringUtils.isNotBlank(response.getError())) {
-                if ("UserMigratedException".equals(response.getCause()))
-                    throw new UserMigratedException(response.getErrorMessage());
-                if ("ForbiddenOperationException".equals(response.getError()))
-                    throw new InvalidCredentialsException(response.getErrorMessage());
-                throw new AuthenticationException(response.getErrorMessage());
+            } else if (StringUtils.isNotBlank(result.getError())) {
+                if ("UserMigratedException".equals(result.getCause())) {
+                    throw new UserMigratedException(result.getErrorMessage());
+                } else if ("ForbiddenOperationException".equals(result.getError())) {
+                    throw new InvalidCredentialsException(result.getErrorMessage());
+                } else {
+                    throw new AuthenticationException(result.getErrorMessage());
+                }
+            } else {
+                return result;
             }
-            return (T)response;
-        } catch (IOException e) {
-            throw new AuthenticationUnavailableException("Cannot contact authentication server", e);
-        } catch (IllegalStateException e) {
-            throw new AuthenticationUnavailableException("Cannot contact authentication server", e);
-        } catch (JsonParseException e) {
-            throw new AuthenticationUnavailableException("Cannot contact authentication server", e);
+        } catch (IOException var6) {
+            throw new AuthenticationUnavailableException("Cannot contact authentication server", var6);
+        } catch (IllegalStateException var7) {
+            throw new AuthenticationUnavailableException("Cannot contact authentication server", var7);
+        } catch (JsonParseException var8) {
+            throw new AuthenticationUnavailableException("Cannot contact authentication server", var8);
         }
     }
 
@@ -86,7 +89,8 @@ public class YggdrasilAuthenticationService extends HttpAuthenticationService {
     }
 
     private static class GameProfileSerializer implements JsonSerializer<GameProfile>, JsonDeserializer<GameProfile> {
-        private GameProfileSerializer() {}
+        private GameProfileSerializer() {
+        }
 
         public GameProfile deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
             JsonObject object = (JsonObject)json;
@@ -97,11 +101,15 @@ public class YggdrasilAuthenticationService extends HttpAuthenticationService {
 
         public JsonElement serialize(GameProfile src, Type typeOfSrc, JsonSerializationContext context) {
             JsonObject result = new JsonObject();
-            if (src.getId() != null)
+            if (src.getId() != null) {
                 result.add("id", context.serialize(src.getId()));
-            if (src.getName() != null)
+            }
+
+            if (src.getName() != null) {
                 result.addProperty("name", src.getName());
-            return (JsonElement)result;
+            }
+
+            return result;
         }
     }
 }

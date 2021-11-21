@@ -11,24 +11,36 @@ import java.lang.reflect.Type;
 public class ProfileSearchResultsResponse extends Response {
     private GameProfile[] profiles;
 
+    public ProfileSearchResultsResponse() {
+    }
+
     public GameProfile[] getProfiles() {
         return this.profiles;
     }
 
     public static class Serializer implements JsonDeserializer<ProfileSearchResultsResponse> {
+        public Serializer() {
+        }
+
         public ProfileSearchResultsResponse deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
             ProfileSearchResultsResponse result = new ProfileSearchResultsResponse();
             if (json instanceof JsonObject) {
                 JsonObject object = (JsonObject)json;
-                if (object.has("error"))
+                if (object.has("error")) {
                     result.setError(object.getAsJsonPrimitive("error").getAsString());
-                if (object.has("errorMessage"))
+                }
+
+                if (object.has("errorMessage")) {
                     result.setError(object.getAsJsonPrimitive("errorMessage").getAsString());
-                if (object.has("cause"))
+                }
+
+                if (object.has("cause")) {
                     result.setError(object.getAsJsonPrimitive("cause").getAsString());
+                }
             } else {
                 result.profiles = (GameProfile[])context.deserialize(json, GameProfile[].class);
             }
+
             return result;
         }
     }

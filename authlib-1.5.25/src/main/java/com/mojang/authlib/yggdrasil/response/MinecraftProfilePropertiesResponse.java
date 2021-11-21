@@ -5,10 +5,11 @@ import java.util.UUID;
 
 public class MinecraftProfilePropertiesResponse extends Response {
     private UUID id;
-
     private String name;
-
     private PropertyMap properties;
+
+    public MinecraftProfilePropertiesResponse() {
+    }
 
     public UUID getId() {
         return this.id;

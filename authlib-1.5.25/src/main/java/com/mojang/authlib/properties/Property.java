@@ -9,13 +9,11 @@ import org.apache.commons.codec.binary.Base64;
 
 public class Property {
     private final String name;
-
     private final String value;
-
     private final String signature;
 
     public Property(String value, String name) {
-        this(value, name, null);
+        this(value, name, (String)null);
     }
 
     public Property(String name, String value, String signature) {
@@ -37,7 +35,7 @@ public class Property {
     }
 
     public boolean hasSignature() {
-        return (this.signature != null);
+        return this.signature != null;
     }
 
     public boolean isSignatureValid(PublicKey publicKey) {
@@ -46,13 +44,14 @@ public class Property {
             signature.initVerify(publicKey);
             signature.update(this.value.getBytes());
             return signature.verify(Base64.decodeBase64(this.signature));
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        } catch (SignatureException e) {
-            e.printStackTrace();
+        } catch (NoSuchAlgorithmException var3) {
+            var3.printStackTrace();
+        } catch (InvalidKeyException var4) {
+            var4.printStackTrace();
+        } catch (SignatureException var5) {
+            var5.printStackTrace();
         }
+
         return false;
     }
 }

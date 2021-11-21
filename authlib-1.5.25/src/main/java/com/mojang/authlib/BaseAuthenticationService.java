@@ -1,3 +1,6 @@
 package com.mojang.authlib;
 
-public abstract class BaseAuthenticationService implements AuthenticationService {}
+public abstract class BaseAuthenticationService implements AuthenticationService {
+    public BaseAuthenticationService() {
+    }
+}

@@ -1,20 +1,12 @@
 package com.mojang.authlib.minecraft;
 
+import java.util.Map;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.annotation.Nullable;
-import java.util.Map;
-
 public class MinecraftProfileTexture {
-    public enum Type {
-        SKIN, CAPE, ELYTRA;
-    }
-
-    public static final int PROFILE_TEXTURE_COUNT = (Type.values()).length;
-
+    public static final int PROFILE_TEXTURE_COUNT = Type.values().length;
     private final String url;
-
     private final Map<String, String> metadata;
 
     public MinecraftProfileTexture(String url, Map<String, String> metadata) {
@@ -26,11 +18,8 @@ public class MinecraftProfileTexture {
         return this.url;
     }
 
-    @Nullable
     public String getMetadata(String key) {
-        if (this.metadata == null)
-            return null;
-        return this.metadata.get(key);
+        return this.metadata == null ? null : (String)this.metadata.get(key);
     }
 
     public String getHash() {
@@ -38,6 +27,15 @@ public class MinecraftProfileTexture {
     }
 
     public String toString() {
-        return (new ToStringBuilder(this)).append("url", this.url).append("hash", getHash()).toString();
+        return (new ToStringBuilder(this)).append("url", this.url).append("hash", this.getHash()).toString();
+    }
+
+    public static enum Type {
+        SKIN,
+        CAPE,
+        ELYTRA;
+
+        private Type() {
+        }
     }
 }

@@ -2,26 +2,26 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group 'com.mojang'
+version '1.5.25'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-    testImplementation 'com.google.code.findbugs:jsr305:3.0.2'
-    compile "com.google.guava:guava:16+"
-    implementation 'org.apache.commons:commons-text:1.6'
+    //testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    //testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    compile "com.google.guava:guava:21.0"
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.1'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.1'
     implementation 'com.google.code.gson:gson:2.8.0'
-    compile 'commons-codec:commons-codec:1.15'
-    compile 'commons-io:commons-io:2.11.0'
-    compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.0'
-    compile "com.google.guava:guava:16+"
+    compile 'commons-codec:commons-codec:1.10'
+    compile 'commons-io:commons-io:2.5'
+    implementation 'org.apache.commons:commons-lang3:3.5'
+
+    //compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.0'
 }
 
 test {

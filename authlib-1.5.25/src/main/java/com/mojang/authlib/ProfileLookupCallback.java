@@ -1,7 +1,7 @@
 package com.mojang.authlib;
 
 public interface ProfileLookupCallback {
-    void onProfileLookupSucceeded(GameProfile paramGameProfile);
+    void onProfileLookupSucceeded(GameProfile var1);
 
-    void onProfileLookupFailed(GameProfile paramGameProfile, Exception paramException);
+    void onProfileLookupFailed(GameProfile var1, Exception var2);
 }

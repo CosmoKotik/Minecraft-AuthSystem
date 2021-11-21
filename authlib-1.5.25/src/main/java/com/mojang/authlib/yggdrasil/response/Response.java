@@ -2,10 +2,11 @@ package com.mojang.authlib.yggdrasil.response;
 
 public class Response {
     private String error;
-
     private String errorMessage;
-
     private String cause;
+
+    public Response() {
+    }
 
     public String getError() {
         return this.error;

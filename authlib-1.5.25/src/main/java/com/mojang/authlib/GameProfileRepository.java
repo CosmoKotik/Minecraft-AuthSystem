@@ -1,5 +1,5 @@
 package com.mojang.authlib;
 
 public interface GameProfileRepository {
-    void findProfilesByNames(String[] paramArrayOfString, Agent paramAgent, ProfileLookupCallback paramProfileLookupCallback);
+    void findProfilesByNames(String[] var1, Agent var2, ProfileLookupCallback var3);
 }

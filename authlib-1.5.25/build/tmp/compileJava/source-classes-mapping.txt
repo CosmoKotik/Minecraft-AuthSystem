@@ -91,6 +91,7 @@ com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.java
  com.mojang.authlib.yggdrasil.YggdrasilGameProfileRepository
 com/mojang/authlib/yggdrasil/YggdrasilAuthenticationService.java
  com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService
+ com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService$1
  com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService$GameProfileSerializer
 com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.java
  com.mojang.authlib.yggdrasil.YggdrasilUserAuthentication
