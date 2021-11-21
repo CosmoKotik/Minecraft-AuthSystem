@@ -42,11 +42,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class YggdrasilMinecraftSessionService extends HttpMinecraftSessionService {
-    private static final String[] WHITELISTED_DOMAINS = new String[] { "localhost" };
+    private static final String[] WHITELISTED_DOMAINS = new String[] { "YOURIP/authserver" };
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final String BASE_URL = "https://localhost/session/minecraft/";
-    private static final URL JOIN_URL = HttpAuthenticationService.constantURL("https://localhost/session/minecraft/join");
-    private static final URL CHECK_URL = HttpAuthenticationService.constantURL("https://localhost/session/minecraft/hasJoined");
+    private static final String BASE_URL = "https://YOURIP/authserver/session/minecraft/";
+    private static final URL JOIN_URL = HttpAuthenticationService.constantURL("https://YOURIP/authserver/session/minecraft/join.php");
+    private static final URL CHECK_URL = HttpAuthenticationService.constantURL("https://YOURIP/authserver/session/minecraft/hasJoined.php");
     private final PublicKey publicKey;
     private final Gson gson = (new GsonBuilder()).registerTypeAdapter(UUID.class, new UUIDTypeAdapter()).create();
     private final LoadingCache<GameProfile, GameProfile> insecureProfiles;
@@ -161,7 +161,7 @@ public class YggdrasilMinecraftSessionService extends HttpMinecraftSessionServic
 
     protected GameProfile fillGameProfile(GameProfile profile, boolean requireSecure) {
         try {
-            URL url = HttpAuthenticationService.constantURL("https://sessionserver.mojang.com/session/minecraft/profile/" + UUIDTypeAdapter.fromUUID(profile.getId()));
+            URL url = HttpAuthenticationService.constantURL("https://YOURIP/authserver/session/minecraft/profile/" + UUIDTypeAdapter.fromUUID(profile.getId()));
             url = HttpAuthenticationService.concatenateURL(url, "unsigned=" + !requireSecure);
             MinecraftProfilePropertiesResponse response = (MinecraftProfilePropertiesResponse)this.getAuthenticationService().makeRequest(url, (Object)null, MinecraftProfilePropertiesResponse.class);
             if (response == null) {

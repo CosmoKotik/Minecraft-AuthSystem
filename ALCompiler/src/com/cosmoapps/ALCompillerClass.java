@@ -11,17 +11,23 @@ public class ALCompillerClass {
 
         String Path = args[0];
         String ipAddr = args[1];
-
+        String EnablePHPExtension = args[2].toString();
+        System.out.println(EnablePHPExtension);
         String filePath = Path + "\\com\\mojang\\authlib\\yggdrasil\\YggdrasilUserAuthentication.java";
+        String fileExt = "";
+        if (EnablePHPExtension.equals("true")) {
+            fileExt = ".php";
+            System.out.println("File extension is " + fileExt);
+        }
 
         System.out.println("Patching YggdrasilUserAuthentication.java");
         List<String> fileContents = Files.readAllLines(Paths.get(filePath));
         fileContents.set(26, "    private static final String BASE_URL = \"https://" + ipAddr + "/\";");
-        fileContents.set(27, "    private static final URL ROUTE_AUTHENTICATE = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/authenticate\");");
-        fileContents.set(28, "    private static final URL ROUTE_REFRESH = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/refresh\");");
-        fileContents.set(29, "    private static final URL ROUTE_VALIDATE = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/validate\");");
-        fileContents.set(30, "    private static final URL ROUTE_INVALIDATE = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/invalidate\");");
-        fileContents.set(31, "    private static final URL ROUTE_SIGNOUT = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/signout\");");
+        fileContents.set(27, "    private static final URL ROUTE_AUTHENTICATE = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/authenticate" + fileExt + "\");");
+        fileContents.set(28, "    private static final URL ROUTE_REFRESH = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/refresh" + fileExt + "\");");
+        fileContents.set(29, "    private static final URL ROUTE_VALIDATE = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/validate" + fileExt + "\");");
+        fileContents.set(30, "    private static final URL ROUTE_INVALIDATE = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/invalidate" + fileExt + "\");");
+        fileContents.set(31, "    private static final URL ROUTE_SIGNOUT = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/signout" + fileExt + "\");");
         Files.write(Paths.get(filePath), fileContents);
         System.out.println("YggdrasilUserAuthentication.java is Patched");
 
@@ -30,8 +36,9 @@ public class ALCompillerClass {
         fileContents = Files.readAllLines(Paths.get(filePath));
         fileContents.set(44, "    private static final String[] WHITELISTED_DOMAINS = new String[] { \"" + ipAddr + "\" };");
         fileContents.set(46, "    private static final String BASE_URL = \"https://" + ipAddr + "/session/minecraft/\";");
-        fileContents.set(47, "    private static final URL JOIN_URL = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/session/minecraft/join\");");
-        fileContents.set(48, "    private static final URL CHECK_URL = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/session/minecraft/hasJoined\");");
+        fileContents.set(47, "    private static final URL JOIN_URL = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/session/minecraft/join" + fileExt + "\");");
+        fileContents.set(48, "    private static final URL CHECK_URL = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/session/minecraft/hasJoined" + fileExt + "\");");
+        fileContents.set(163, "            URL url = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/session/minecraft/profile/\" + UUIDTypeAdapter.fromUUID(profile.getId()));");
         Files.write(Paths.get(filePath), fileContents);
         System.out.println("YggdrasilMinecraftSessionService.java is Patched");
 
@@ -40,13 +47,14 @@ public class ALCompillerClass {
         fileContents = Files.readAllLines(Paths.get(filePath));
         fileContents.set(21, "    private static final String BASE_URL = \"https://" + ipAddr + "/\";");
         fileContents.set(22, "    private static final String SEARCH_PAGE_URL = \"https://" + ipAddr + "/profiles/\";");
+        fileContents.set(56, "                    ProfileSearchResultsResponse response = (ProfileSearchResultsResponse)this.authenticationService.makeRequest(HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/profiles/\" + agent.getName().toLowerCase()), request, ProfileSearchResultsResponse.class);");
         Files.write(Paths.get(filePath), fileContents);
         System.out.println("YggdrasilGameProfileRepository.java is Patched");
 
         System.out.println("Patching LegacyUserAuthentication.java");
         filePath = Path + "\\com\\mojang\\authlib\\legacy\\LegacyUserAuthentication.java";
         fileContents = Files.readAllLines(Paths.get(filePath));
-        fileContents.set(16, "    private static final URL AUTHENTICATION_URL = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "\");");
+        fileContents.set(16, "    private static final URL AUTHENTICATION_URL = HttpAuthenticationService.constantURL(\"https://" + ipAddr + "/authserver" + fileExt + "\");");
         Files.write(Paths.get(filePath), fileContents);
         System.out.println("LegacyUserAuthentication.java is Patched");
 

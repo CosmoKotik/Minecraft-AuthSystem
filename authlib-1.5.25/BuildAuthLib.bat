@@ -7,7 +7,7 @@ call config.bat
 rename config.bat config.ini
 
 :AuthLib recompiller
-java -jar ALCompiler.jar src\main\java %AuthServerIP%
+java -jar ALCompiler.jar src\main\java %AuthServerIP% %EnablePHPExtension%
 
 :Compile edited files using gradle
 :gradlew build

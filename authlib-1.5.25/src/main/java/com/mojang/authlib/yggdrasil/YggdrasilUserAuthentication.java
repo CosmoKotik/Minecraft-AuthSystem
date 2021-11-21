@@ -24,12 +24,12 @@ import org.apache.logging.log4j.Logger;
 
 public class YggdrasilUserAuthentication extends HttpUserAuthentication {
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final String BASE_URL = "https://localhost/";
-    private static final URL ROUTE_AUTHENTICATE = HttpAuthenticationService.constantURL("https://localhost/authenticate");
-    private static final URL ROUTE_REFRESH = HttpAuthenticationService.constantURL("https://localhost/refresh");
-    private static final URL ROUTE_VALIDATE = HttpAuthenticationService.constantURL("https://localhost/validate");
-    private static final URL ROUTE_INVALIDATE = HttpAuthenticationService.constantURL("https://localhost/invalidate");
-    private static final URL ROUTE_SIGNOUT = HttpAuthenticationService.constantURL("https://localhost/signout");
+    private static final String BASE_URL = "https://YOURIP/authserver/";
+    private static final URL ROUTE_AUTHENTICATE = HttpAuthenticationService.constantURL("https://YOURIP/authserver/authenticate.php");
+    private static final URL ROUTE_REFRESH = HttpAuthenticationService.constantURL("https://YOURIP/authserver/refresh.php");
+    private static final URL ROUTE_VALIDATE = HttpAuthenticationService.constantURL("https://YOURIP/authserver/validate.php");
+    private static final URL ROUTE_INVALIDATE = HttpAuthenticationService.constantURL("https://YOURIP/authserver/invalidate.php");
+    private static final URL ROUTE_SIGNOUT = HttpAuthenticationService.constantURL("https://YOURIP/authserver/signout.php");
     private static final String STORAGE_KEY_ACCESS_TOKEN = "accessToken";
     private final Agent agent;
     private GameProfile[] profiles;

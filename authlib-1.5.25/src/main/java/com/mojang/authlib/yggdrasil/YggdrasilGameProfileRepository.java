@@ -19,8 +19,8 @@ import org.apache.logging.log4j.Logger;
 
 public class YggdrasilGameProfileRepository implements GameProfileRepository {
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final String BASE_URL = "https://localhost/";
-    private static final String SEARCH_PAGE_URL = "https://localhost/profiles/";
+    private static final String BASE_URL = "https://YOURIP/authserver/";
+    private static final String SEARCH_PAGE_URL = "https://YOURIP/authserver/profiles/";
     private static final int ENTRIES_PER_PAGE = 2;
     private static final int MAX_FAIL_COUNT = 3;
     private static final int DELAY_BETWEEN_PAGES = 100;
@@ -54,7 +54,7 @@ public class YggdrasilGameProfileRepository implements GameProfileRepository {
                 boolean failed = false;
 
                 try {
-                    ProfileSearchResultsResponse response = (ProfileSearchResultsResponse)this.authenticationService.makeRequest(HttpAuthenticationService.constantURL("https://api.mojang.com/profiles/" + agent.getName().toLowerCase()), request, ProfileSearchResultsResponse.class);
+                    ProfileSearchResultsResponse response = (ProfileSearchResultsResponse)this.authenticationService.makeRequest(HttpAuthenticationService.constantURL("https://YOURIP/authserver/profiles/" + agent.getName().toLowerCase()), request, ProfileSearchResultsResponse.class);
                     failCount = 0;
                     LOGGER.debug("Page {} returned {} results, parsing", 0, response.getProfiles().length);
                     Set<String> missing = Sets.newHashSet(request);

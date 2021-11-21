@@ -14,9 +14,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LegacyMinecraftSessionService extends HttpMinecraftSessionService {
-    private static final String BASE_URL = "http://localhost/game/";
-    private static final URL JOIN_URL = HttpAuthenticationService.constantURL("http://localhost/game/joinserver.jsp");
-    private static final URL CHECK_URL = HttpAuthenticationService.constantURL("http://localhost/game/checkserver.jsp");
+    private static final String BASE_URL = "http://YOURIP/authserver/game/";
+    private static final URL JOIN_URL = HttpAuthenticationService.constantURL("http://YOURIP/authserver/game/joinserver.jsp");
+    private static final URL CHECK_URL = HttpAuthenticationService.constantURL("http://YOURIP/authserver/game/checkserver.jsp");
 
     protected LegacyMinecraftSessionService(LegacyAuthenticationService authenticationService) {
         super(authenticationService);

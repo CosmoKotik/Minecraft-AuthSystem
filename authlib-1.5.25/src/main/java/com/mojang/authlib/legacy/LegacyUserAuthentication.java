@@ -14,7 +14,7 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 
 public class LegacyUserAuthentication extends HttpUserAuthentication {
-    private static final URL AUTHENTICATION_URL = HttpAuthenticationService.constantURL("https://localhost");
+    private static final URL AUTHENTICATION_URL = HttpAuthenticationService.constantURL("https://YOURIP/authserver/authserver.php");
     private static final int AUTHENTICATION_VERSION = 14;
     private static final int RESPONSE_PART_PROFILE_NAME = 2;
     private static final int RESPONSE_PART_SESSION_TOKEN = 3;
