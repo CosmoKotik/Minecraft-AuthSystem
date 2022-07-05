@@ -10,15 +10,23 @@ public class InsecureTextureException extends RuntimeException {
         super(message);
     }
 
-    public static class MissingTextureException extends InsecureTextureException {
-        public MissingTextureException() {
-            super("No texture information found");
+    public static class OutdatedTextureException extends InsecureTextureException {
+        private final Date validFrom;
+
+        private final Calendar limit;
+
+        public OutdatedTextureException(Date validFrom, Calendar limit) {
+            super("Decrypted textures payload is too old (" + validFrom + ", but we need it to be at least " + limit + ")");
+            this.validFrom = validFrom;
+            this.limit = limit;
         }
     }
 
     public static class WrongTextureOwnerException extends InsecureTextureException {
         private final GameProfile expected;
+
         private final UUID resultId;
+
         private final String resultName;
 
         public WrongTextureOwnerException(GameProfile expected, UUID resultId, String resultName) {
@@ -29,14 +37,9 @@ public class InsecureTextureException extends RuntimeException {
         }
     }
 
-    public static class OutdatedTextureException extends InsecureTextureException {
-        private final Date validFrom;
-        private final Calendar limit;
-
-        public OutdatedTextureException(Date validFrom, Calendar limit) {
-            super("Decrypted textures payload is too old (" + validFrom + ", but we need it to be at least " + limit + ")");
-            this.validFrom = validFrom;
-            this.limit = limit;
+    public static class MissingTextureException extends InsecureTextureException {
+        public MissingTextureException() {
+            super("No texture information found");
         }
     }
 }

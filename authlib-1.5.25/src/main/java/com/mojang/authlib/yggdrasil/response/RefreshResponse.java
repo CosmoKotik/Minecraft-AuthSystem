@@ -4,13 +4,14 @@ import com.mojang.authlib.GameProfile;
 
 public class RefreshResponse extends Response {
     private String accessToken;
-    private String clientToken;
-    private GameProfile selectedProfile;
-    private GameProfile[] availableProfiles;
-    private User user;
 
-    public RefreshResponse() {
-    }
+    private String clientToken;
+
+    private GameProfile selectedProfile;
+
+    private GameProfile[] availableProfiles;
+
+    private User user;
 
     public String getAccessToken() {
         return this.accessToken;

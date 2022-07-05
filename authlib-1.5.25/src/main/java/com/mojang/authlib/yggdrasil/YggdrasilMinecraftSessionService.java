@@ -4,9 +4,11 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Multimap;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
+import com.mojang.authlib.AuthenticationService;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.HttpAuthenticationService;
 import com.mojang.authlib.exceptions.AuthenticationException;
@@ -14,7 +16,6 @@ import com.mojang.authlib.exceptions.AuthenticationUnavailableException;
 import com.mojang.authlib.minecraft.HttpMinecraftSessionService;
 import com.mojang.authlib.minecraft.InsecureTextureException;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
-import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import com.mojang.authlib.properties.Property;
 import com.mojang.authlib.yggdrasil.request.JoinMinecraftServerRequest;
 import com.mojang.authlib.yggdrasil.response.HasJoinedMinecraftServerResponse;
@@ -30,10 +31,8 @@ import java.security.KeyFactory;
 import java.security.PublicKey;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.UUID;
-import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.codec.Charsets;
 import org.apache.commons.codec.binary.Base64;
@@ -42,28 +41,35 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class YggdrasilMinecraftSessionService extends HttpMinecraftSessionService {
-    private static final String[] WHITELISTED_DOMAINS = new String[] { "YOURIP/authserver" };
+    private static final String[] WHITELISTED_DOMAINS = new String[] { ".onefinity.ru" };
+
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final String BASE_URL = "https://YOURIP/authserver/session/minecraft/";
-    private static final URL JOIN_URL = HttpAuthenticationService.constantURL("https://YOURIP/authserver/session/minecraft/join.php");
-    private static final URL CHECK_URL = HttpAuthenticationService.constantURL("https://YOURIP/authserver/session/minecraft/hasJoined.php");
+
+    private static final String BASE_URL = "https://authserver.onefinity.ru/sessionserver/session/minecraft/";
+
+    private static final URL JOIN_URL = HttpAuthenticationService.constantURL("https://authserver.onefinity.ru/sessionserver/session/minecraft/join");
+
+    private static final URL CHECK_URL = HttpAuthenticationService.constantURL("https://authserver.onefinity.ru/sessionserver/session/minecraft/hasJoined");
+
     private final PublicKey publicKey;
+
     private final Gson gson = (new GsonBuilder()).registerTypeAdapter(UUID.class, new UUIDTypeAdapter()).create();
-    private final LoadingCache<GameProfile, GameProfile> insecureProfiles;
+
+    private final LoadingCache<GameProfile, GameProfile> insecureProfiles = CacheBuilder.newBuilder()
+            .expireAfterWrite(6L, TimeUnit.HOURS)
+            .build(new CacheLoader<GameProfile, GameProfile>() {
+                public GameProfile load(GameProfile key) throws Exception {
+                    return YggdrasilMinecraftSessionService.this.fillGameProfile(key, false);
+                }
+            });
 
     protected YggdrasilMinecraftSessionService(YggdrasilAuthenticationService authenticationService) {
         super(authenticationService);
-        this.insecureProfiles = CacheBuilder.newBuilder().expireAfterWrite(6L, TimeUnit.HOURS).build(new CacheLoader<GameProfile, GameProfile>() {
-            public GameProfile load(GameProfile key) throws Exception {
-                return YggdrasilMinecraftSessionService.this.fillGameProfile(key, false);
-            }
-        });
-
         try {
             X509EncodedKeySpec spec = new X509EncodedKeySpec(IOUtils.toByteArray(YggdrasilMinecraftSessionService.class.getResourceAsStream("/yggdrasil_session_pubkey.der")));
             KeyFactory keyFactory = KeyFactory.getInstance("RSA");
             this.publicKey = keyFactory.generatePublic(spec);
-        } catch (Exception var4) {
+        } catch (Exception ignored) {
             throw new Error("Missing/invalid yggdrasil public key!");
         }
     }
@@ -73,109 +79,89 @@ public class YggdrasilMinecraftSessionService extends HttpMinecraftSessionServic
         request.accessToken = authenticationToken;
         request.selectedProfile = profile.getId();
         request.serverId = serverId;
-        this.getAuthenticationService().makeRequest(JOIN_URL, request, Response.class);
+        getAuthenticationService().makeRequest(JOIN_URL, request, Response.class);
     }
 
     public GameProfile hasJoinedServer(GameProfile user, String serverId, InetAddress address) throws AuthenticationUnavailableException {
-        Map<String, Object> arguments = new HashMap();
+        Map<String, Object> arguments = new HashMap<>();
         arguments.put("username", user.getName());
         arguments.put("serverId", serverId);
-        if (address != null) {
+        if (address != null)
             arguments.put("ip", address.getHostAddress());
-        }
-
         URL url = HttpAuthenticationService.concatenateURL(CHECK_URL, HttpAuthenticationService.buildQuery(arguments));
-
         try {
-            HasJoinedMinecraftServerResponse response = (HasJoinedMinecraftServerResponse)this.getAuthenticationService().makeRequest(url, (Object)null, HasJoinedMinecraftServerResponse.class);
+            HasJoinedMinecraftServerResponse response = getAuthenticationService().<HasJoinedMinecraftServerResponse>makeRequest(url, null, HasJoinedMinecraftServerResponse.class);
             if (response != null && response.getId() != null) {
                 GameProfile result = new GameProfile(response.getId(), user.getName());
-                if (response.getProperties() != null) {
-                    result.getProperties().putAll(response.getProperties());
-                }
-
+                if (response.getProperties() != null)
+                    result.getProperties().putAll((Multimap)response.getProperties());
                 return result;
-            } else {
-                return null;
             }
-        } catch (AuthenticationUnavailableException var8) {
-            throw var8;
-        } catch (AuthenticationException var9) {
+            return null;
+        } catch (AuthenticationUnavailableException e) {
+            throw e;
+        } catch (AuthenticationException ignored) {
             return null;
         }
     }
 
-    public Map<Type, MinecraftProfileTexture> getTextures(GameProfile profile, boolean requireSecure) {
-        Property textureProperty = (Property)Iterables.getFirst(profile.getProperties().get("textures"), (Object)null);
-        if (textureProperty == null) {
-            return new HashMap();
-        } else {
-            if (requireSecure) {
-                if (!textureProperty.hasSignature()) {
-                    LOGGER.error("Signature is missing from textures payload");
-                    throw new InsecureTextureException("Signature is missing from textures payload");
-                }
-
-                if (!textureProperty.isSignatureValid(this.publicKey)) {
-                    LOGGER.error("Textures payload has been tampered with (signature invalid)");
-                    throw new InsecureTextureException("Textures payload has been tampered with (signature invalid)");
-                }
+    public Map<MinecraftProfileTexture.Type, MinecraftProfileTexture> getTextures(GameProfile profile, boolean requireSecure) {
+        MinecraftTexturesPayload result;
+        Property textureProperty = (Property)Iterables.getFirst(profile.getProperties().get("textures"), null);
+        if (textureProperty == null)
+            return new HashMap<>();
+        if (requireSecure) {
+            if (!textureProperty.hasSignature()) {
+                LOGGER.error("Signature is missing from textures payload");
+                throw new InsecureTextureException("Signature is missing from textures payload");
             }
-
-            MinecraftTexturesPayload result;
-            try {
-                String json = new String(Base64.decodeBase64(textureProperty.getValue()), Charsets.UTF_8);
-                result = (MinecraftTexturesPayload)this.gson.fromJson(json, MinecraftTexturesPayload.class);
-            } catch (JsonParseException var7) {
-                LOGGER.error("Could not decode textures payload", var7);
-                return new HashMap();
-            }
-
-            if (result != null && result.getTextures() != null) {
-                Iterator var8 = result.getTextures().entrySet().iterator();
-
-                Entry entry;
-                do {
-                    if (!var8.hasNext()) {
-                        return result.getTextures();
-                    }
-
-                    entry = (Entry)var8.next();
-                } while(isWhitelistedDomain(((MinecraftProfileTexture)entry.getValue()).getUrl()));
-
-                LOGGER.error("Textures payload has been tampered with (non-whitelisted domain)");
-                return new HashMap();
-            } else {
-                return new HashMap();
+            if (!textureProperty.isSignatureValid(this.publicKey)) {
+                LOGGER.error("Textures payload has been tampered with (signature invalid)");
+                throw new InsecureTextureException("Textures payload has been tampered with (signature invalid)");
             }
         }
+        try {
+            String json = new String(Base64.decodeBase64(textureProperty.getValue()), Charsets.UTF_8);
+            result = (MinecraftTexturesPayload)this.gson.fromJson(json, MinecraftTexturesPayload.class);
+        } catch (JsonParseException e) {
+            LOGGER.error("Could not decode textures payload", (Throwable)e);
+            return new HashMap<>();
+        }
+        if (result == null || result.getTextures() == null)
+            return new HashMap<>();
+        for (Map.Entry<MinecraftProfileTexture.Type, MinecraftProfileTexture> entry : (Iterable<Map.Entry<MinecraftProfileTexture.Type, MinecraftProfileTexture>>)result.getTextures().entrySet()) {
+            if (!isWhitelistedDomain(((MinecraftProfileTexture)entry.getValue()).getUrl())) {
+                LOGGER.error("Textures payload has been tampered with (non-whitelisted domain)");
+                return new HashMap<>();
+            }
+        }
+        return result.getTextures();
     }
 
     public GameProfile fillProfileProperties(GameProfile profile, boolean requireSecure) {
-        if (profile.getId() == null) {
+        if (profile.getId() == null)
             return profile;
-        } else {
-            return !requireSecure ? (GameProfile)this.insecureProfiles.getUnchecked(profile) : this.fillGameProfile(profile, true);
-        }
+        if (!requireSecure)
+            return (GameProfile)this.insecureProfiles.getUnchecked(profile);
+        return fillGameProfile(profile, true);
     }
 
     protected GameProfile fillGameProfile(GameProfile profile, boolean requireSecure) {
         try {
-            URL url = HttpAuthenticationService.constantURL("https://YOURIP/authserver/session/minecraft/profile/" + UUIDTypeAdapter.fromUUID(profile.getId()));
-            url = HttpAuthenticationService.concatenateURL(url, "unsigned=" + !requireSecure);
-            MinecraftProfilePropertiesResponse response = (MinecraftProfilePropertiesResponse)this.getAuthenticationService().makeRequest(url, (Object)null, MinecraftProfilePropertiesResponse.class);
+            URL url = HttpAuthenticationService.constantURL("https://authserver.onefinity.ru/sessionserver/session/minecraft/profile/" + UUIDTypeAdapter.fromUUID(profile.getId()));
+            url = HttpAuthenticationService.concatenateURL(url, "unsigned=" + (!requireSecure ? 1 : 0));
+            MinecraftProfilePropertiesResponse response = getAuthenticationService().<MinecraftProfilePropertiesResponse>makeRequest(url, null, MinecraftProfilePropertiesResponse.class);
             if (response == null) {
                 LOGGER.debug("Couldn't fetch profile properties for " + profile + " as the profile does not exist");
                 return profile;
-            } else {
-                GameProfile result = new GameProfile(response.getId(), response.getName());
-                result.getProperties().putAll(response.getProperties());
-                profile.getProperties().putAll(response.getProperties());
-                LOGGER.debug("Successfully fetched profile properties for " + profile);
-                return result;
             }
-        } catch (AuthenticationException var6) {
-            LOGGER.warn("Couldn't look up profile properties for " + profile, var6);
+            GameProfile result = new GameProfile(response.getId(), response.getName());
+            result.getProperties().putAll((Multimap)response.getProperties());
+            profile.getProperties().putAll((Multimap)response.getProperties());
+            LOGGER.debug("Successfully fetched profile properties for " + profile);
+            return result;
+        } catch (AuthenticationException e) {
+            LOGGER.warn("Couldn't look up profile properties for " + profile, (Throwable)e);
             return profile;
         }
     }
@@ -186,21 +172,16 @@ public class YggdrasilMinecraftSessionService extends HttpMinecraftSessionServic
 
     private static boolean isWhitelistedDomain(String url) {
         URI uri = null;
-
         try {
             uri = new URI(url);
-        } catch (URISyntaxException var4) {
+        } catch (URISyntaxException ignored) {
             throw new IllegalArgumentException("Invalid URL '" + url + "'");
         }
-
         String domain = uri.getHost();
-
-        for(int i = 0; i < WHITELISTED_DOMAINS.length; ++i) {
-            if (domain.endsWith(WHITELISTED_DOMAINS[i])) {
+        for (int i = 0; i < WHITELISTED_DOMAINS.length; i++) {
+            if (domain.endsWith(WHITELISTED_DOMAINS[i]))
                 return true;
-            }
         }
-
         return false;
     }
 }

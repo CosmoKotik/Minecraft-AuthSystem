@@ -19,15 +19,15 @@ public interface UserAuthentication {
 
     GameProfile getSelectedProfile();
 
-    void selectGameProfile(GameProfile var1) throws AuthenticationException;
+    void selectGameProfile(GameProfile paramGameProfile) throws AuthenticationException;
 
-    void loadFromStorage(Map<String, Object> var1);
+    void loadFromStorage(Map<String, Object> paramMap);
 
     Map<String, Object> saveForStorage();
 
-    void setUsername(String var1);
+    void setUsername(String paramString);
 
-    void setPassword(String var1);
+    void setPassword(String paramString);
 
     String getAuthenticatedToken();
 

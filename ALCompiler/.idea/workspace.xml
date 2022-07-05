@@ -7,9 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89000292-197e-4b26-8e79-135ef1830869" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ALCompiler/com/cosmoapps/ALCompillerClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ALCompiler/com/cosmoapps/ALCompillerClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ALCompiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ALCompiler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ALCompiler_jar/ALCompiler.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ALCompiler/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ALCompiler/com/cosmoapps/ALCompillerClass.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/cosmoapps/ALCompillerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cosmoapps/ALCompillerClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/TESTLOGS/logs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/authenticate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/sessionserver/session/minecraft/hasJoined" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/sessionserver/session/minecraft/join" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/users/profiles/minecraft/_CosmoKotik_" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/users/profiles/minecraft/index.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
@@ -18,21 +29,126 @@
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/BuildAuthLib.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/BuildAuthLib.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/legacy/LegacyMinecraftSessionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/legacy/LegacyMinecraftSessionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/legacy/LegacyUserAuthentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/legacy/LegacyUserAuthentication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/New Text Document.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/ALCompiler.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/ALCompiler.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/BuildAuthLib.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/asd.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/META-INF/org/apache/logging/log4j/core/config/plugins/Log4j2Plugins.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/Agent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/AuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/BaseAuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/BaseUserAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/GameProfile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/GameProfileRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/HttpAuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/HttpUserAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/ProfileLookupCallback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/UserAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/UserType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/exceptions/AuthenticationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/exceptions/AuthenticationUnavailableException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/exceptions/InvalidCredentialsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/exceptions/UserMigratedException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/legacy/LegacyAuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/legacy/LegacyMinecraftSessionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/legacy/LegacyUserAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/minecraft/BaseMinecraftSessionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/minecraft/HttpMinecraftSessionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/minecraft/InsecureTextureException$MissingTextureException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/minecraft/InsecureTextureException$OutdatedTextureException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/minecraft/InsecureTextureException$WrongTextureOwnerException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/minecraft/InsecureTextureException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/minecraft/MinecraftProfileTexture$Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/minecraft/MinecraftProfileTexture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/minecraft/MinecraftSessionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/properties/Property.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/properties/PropertyMap$Serializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/properties/PropertyMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/ProfileIncompleteException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/ProfileNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilAuthenticationService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilAuthenticationService$GameProfileSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilAuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/request/AuthenticationRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/request/InvalidateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/request/JoinMinecraftServerRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/request/RefreshRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/request/ValidateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/response/AuthenticationResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/response/HasJoinedMinecraftServerResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/response/MinecraftProfilePropertiesResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/response/MinecraftTexturesPayload.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/response/ProfileSearchResultsResponse$Serializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/response/ProfileSearchResultsResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/response/RefreshResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/response/Response.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/authlib/yggdrasil/response/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/util/QueueLogAppender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/classes/java/main/com/mojang/util/UUIDTypeAdapter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/libs/authlib-1.5.25-1.5.25.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/build/libs/authlib-1.5.25-1.5.25.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/build/yggdrasil_session_pubkey.der" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/gradlewBUILDER.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/gradlewBUILDER.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/out/authlib-1.5.25.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/out/authlib-1.5.25.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main/java/com/mojang/authlib/legacy/LegacyAuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/src/main/java/com/mojang/authlib/legacy/LegacyAuthenticationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main/java/com/mojang/authlib/legacy/LegacyMinecraftSessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/src/main/java/com/mojang/authlib/legacy/LegacyMinecraftSessionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main/java/com/mojang/authlib/legacy/LegacyUserAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/src/main/java/com/mojang/authlib/legacy/LegacyUserAuthentication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main/java/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/src/main/java/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main/java/com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/src/main/java/com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main/java/com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authlib-1.5.25/src/main/java/com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/Agent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/AuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/BaseAuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/BaseUserAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/GameProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/GameProfileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/HttpAuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/HttpUserAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/ProfileLookupCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/UserAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/UserType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/exceptions/AuthenticationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/exceptions/AuthenticationUnavailableException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/exceptions/InvalidCredentialsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/exceptions/UserMigratedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/legacy/LegacyAuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/legacy/LegacyMinecraftSessionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/legacy/LegacyUserAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/minecraft/BaseMinecraftSessionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/minecraft/HttpMinecraftSessionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/minecraft/InsecureTextureException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/minecraft/MinecraftProfileTexture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/minecraft/MinecraftSessionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/properties/Property.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/properties/PropertyMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/ProfileIncompleteException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/ProfileNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/YggdrasilAuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/request/AuthenticationRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/request/InvalidateRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/request/JoinMinecraftServerRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/request/RefreshRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/request/ValidateRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/response/AuthenticationResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/response/HasJoinedMinecraftServerResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/response/MinecraftProfilePropertiesResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/response/MinecraftTexturesPayload.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/response/ProfileSearchResultsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/response/RefreshResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/response/Response.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/authlib/yggdrasil/response/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/util/QueueLogAppender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authlib-1.5.25/src/main2/java/com/mojang/util/UUIDTypeAdapter.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +165,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="20w2OC06uVQH1eYTsLYPPa0efik" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -58,16 +182,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../authlib-1.5.25" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15136719" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
-    <configuration name="ALCompillerClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ALCompillerClass" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cosmoapps.ALCompillerClass" />
       <module name="ALCompiler" />
-      <option name="PROGRAM_PARAMETERS" value="D:\DEV\NEW\Minecraft-AuthSystem\authlib-1.5.25\src\main\java horror-craft.ru true" />
+      <option name="PROGRAM_PARAMETERS" value="D:\DEV\NEW\Minecraft-AuthSystem\authlib-1.5.25\src\main\java horror-craft.ru true true" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.cosmoapps.*" />
@@ -75,14 +201,10 @@
         </pattern>
       </extension>
       <method v="2">
+        <option name="MakeProject" enabled="true" />
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.ALCompillerClass" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -98,11 +220,67 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:D:/DEV/NEW/Minecraft-AuthSystem/ALCompiler/out" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="2">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$/.." />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+        <entry key="2" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />

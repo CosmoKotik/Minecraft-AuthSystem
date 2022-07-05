@@ -4,9 +4,8 @@ import java.util.UUID;
 
 public class JoinMinecraftServerRequest {
     public String accessToken;
-    public UUID selectedProfile;
-    public String serverId;
 
-    public JoinMinecraftServerRequest() {
-    }
+    public UUID selectedProfile;
+
+    public String serverId;
 }

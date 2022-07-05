@@ -12,8 +12,14 @@
     <list default="true" id="fec56f99-72e2-449f-bbcf-cb087e3a2f53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../ALCompiler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ALCompiler/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ALCompiler/out/artifacts/ALCompiler_jar/ALCompiler.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../ALCompiler/out/artifacts/ALCompiler_jar/ALCompiler.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ALCompiler/out/production/ALCompiler/com/cosmoapps/ALCompillerClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ALCompiler/out/production/ALCompiler/com/cosmoapps/ALCompillerClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ALCompiler/src/com/cosmoapps/ALCompillerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ALCompiler/src/com/cosmoapps/ALCompillerClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/TESTLOGS/logs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/authenticate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/sessionserver/session/minecraft/hasJoined" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/sessionserver/session/minecraft/join" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/users/profiles/minecraft/_CosmoKotik_" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthServer/users/profiles/minecraft/index.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
@@ -23,10 +29,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ALCompiler.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ALCompiler.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildAuthLib.bat" beforeDir="false" afterPath="$PROJECT_DIR$/BuildAuthLib.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mojang/authlib/legacy/LegacyMinecraftSessionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mojang/authlib/legacy/LegacyMinecraftSessionService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mojang/authlib/legacy/LegacyUserAuthentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mojang/authlib/legacy/LegacyUserAuthentication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mojang/authlib/yggdrasil/New Text Document.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.class" afterDir="false" />

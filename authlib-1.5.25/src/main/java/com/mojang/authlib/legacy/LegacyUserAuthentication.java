@@ -1,5 +1,6 @@
 package com.mojang.authlib.legacy;
 
+import com.mojang.authlib.AuthenticationService;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.HttpAuthenticationService;
 import com.mojang.authlib.HttpUserAuthentication;
@@ -14,11 +15,16 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 
 public class LegacyUserAuthentication extends HttpUserAuthentication {
-    private static final URL AUTHENTICATION_URL = HttpAuthenticationService.constantURL("https://YOURIP/authserver/authserver.php");
+    private static final URL AUTHENTICATION_URL = HttpAuthenticationService.constantURL("https://authserver.onefinity.ru/login/");
+
     private static final int AUTHENTICATION_VERSION = 14;
+
     private static final int RESPONSE_PART_PROFILE_NAME = 2;
+
     private static final int RESPONSE_PART_SESSION_TOKEN = 3;
+
     private static final int RESPONSE_PART_PROFILE_ID = 4;
+
     private String sessionToken;
 
     protected LegacyUserAuthentication(LegacyAuthenticationService authenticationService) {
@@ -26,38 +32,32 @@ public class LegacyUserAuthentication extends HttpUserAuthentication {
     }
 
     public void logIn() throws AuthenticationException {
-        if (StringUtils.isBlank(this.getUsername())) {
+        String response;
+        if (StringUtils.isBlank(getUsername()))
             throw new InvalidCredentialsException("Invalid username");
-        } else if (StringUtils.isBlank(this.getPassword())) {
+        if (StringUtils.isBlank(getPassword()))
             throw new InvalidCredentialsException("Invalid password");
+        Map<String, Object> args = new HashMap<>();
+        args.put("user", getUsername());
+        args.put("password", getPassword());
+        args.put("version", Integer.valueOf(14));
+        try {
+            response = getAuthenticationService().performPostRequest(AUTHENTICATION_URL, HttpAuthenticationService.buildQuery(args), "application/x-www-form-urlencoded").trim();
+        } catch (IOException e) {
+            throw new AuthenticationException("Authentication server is not responding", e);
+        }
+        String[] split = response.split(":");
+        if (split.length == 5) {
+            String profileId = split[4];
+            String profileName = split[2];
+            String sessionToken = split[3];
+            if (StringUtils.isBlank(profileId) || StringUtils.isBlank(profileName) || StringUtils.isBlank(sessionToken))
+                throw new AuthenticationException("Unknown response from authentication server: " + response);
+            setSelectedProfile(new GameProfile(UUIDTypeAdapter.fromString(profileId), profileName));
+            this.sessionToken = sessionToken;
+            setUserType(UserType.LEGACY);
         } else {
-            Map<String, Object> args = new HashMap();
-            args.put("user", this.getUsername());
-            args.put("password", this.getPassword());
-            args.put("version", 14);
-
-            String response;
-            try {
-                response = this.getAuthenticationService().performPostRequest(AUTHENTICATION_URL, HttpAuthenticationService.buildQuery(args), "application/x-www-form-urlencoded").trim();
-            } catch (IOException var7) {
-                throw new AuthenticationException("Authentication server is not responding", var7);
-            }
-
-            String[] split = response.split(":");
-            if (split.length == 5) {
-                String profileId = split[4];
-                String profileName = split[2];
-                String sessionToken = split[3];
-                if (!StringUtils.isBlank(profileId) && !StringUtils.isBlank(profileName) && !StringUtils.isBlank(sessionToken)) {
-                    this.setSelectedProfile(new GameProfile(UUIDTypeAdapter.fromString(profileId), profileName));
-                    this.sessionToken = sessionToken;
-                    this.setUserType(UserType.LEGACY);
-                } else {
-                    throw new AuthenticationException("Unknown response from authentication server: " + response);
-                }
-            } else {
-                throw new InvalidCredentialsException(response);
-            }
+            throw new InvalidCredentialsException(response);
         }
     }
 
@@ -67,11 +67,13 @@ public class LegacyUserAuthentication extends HttpUserAuthentication {
     }
 
     public boolean canPlayOnline() {
-        return this.isLoggedIn() && this.getSelectedProfile() != null && this.getAuthenticatedToken() != null;
+        return (isLoggedIn() && getSelectedProfile() != null && getAuthenticatedToken() != null);
     }
 
     public GameProfile[] getAvailableProfiles() {
-        return this.getSelectedProfile() != null ? new GameProfile[]{this.getSelectedProfile()} : new GameProfile[0];
+        if (getSelectedProfile() != null)
+            return new GameProfile[] { getSelectedProfile() };
+        return new GameProfile[0];
     }
 
     public void selectGameProfile(GameProfile profile) throws AuthenticationException {
@@ -83,7 +85,7 @@ public class LegacyUserAuthentication extends HttpUserAuthentication {
     }
 
     public String getUserID() {
-        return this.getUsername();
+        return getUsername();
     }
 
     public LegacyAuthenticationService getAuthenticationService() {

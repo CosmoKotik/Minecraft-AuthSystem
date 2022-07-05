@@ -1,6 +1,8 @@
 package com.mojang.authlib.yggdrasil;
 
+import com.google.common.collect.Multimap;
 import com.mojang.authlib.Agent;
+import com.mojang.authlib.AuthenticationService;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.HttpAuthenticationService;
 import com.mojang.authlib.HttpUserAuthentication;
@@ -24,16 +26,27 @@ import org.apache.logging.log4j.Logger;
 
 public class YggdrasilUserAuthentication extends HttpUserAuthentication {
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final String BASE_URL = "https://YOURIP/authserver/";
-    private static final URL ROUTE_AUTHENTICATE = HttpAuthenticationService.constantURL("https://YOURIP/authserver/authenticate.php");
-    private static final URL ROUTE_REFRESH = HttpAuthenticationService.constantURL("https://YOURIP/authserver/refresh.php");
-    private static final URL ROUTE_VALIDATE = HttpAuthenticationService.constantURL("https://YOURIP/authserver/validate.php");
-    private static final URL ROUTE_INVALIDATE = HttpAuthenticationService.constantURL("https://YOURIP/authserver/invalidate.php");
-    private static final URL ROUTE_SIGNOUT = HttpAuthenticationService.constantURL("https://YOURIP/authserver/signout.php");
+
+    private static final String BASE_URL = "https://authserver.onefinity.ru/";
+
+    private static final URL ROUTE_AUTHENTICATE = HttpAuthenticationService.constantURL("https://authserver.onefinity.ru/authenticate");
+
+    private static final URL ROUTE_REFRESH = HttpAuthenticationService.constantURL("https://authserver.onefinity.ru/refresh");
+
+    private static final URL ROUTE_VALIDATE = HttpAuthenticationService.constantURL("https://authserver.onefinity.ru/validate");
+
+    private static final URL ROUTE_INVALIDATE = HttpAuthenticationService.constantURL("https://authserver.onefinity.ru/invalidate");
+
+    private static final URL ROUTE_SIGNOUT = HttpAuthenticationService.constantURL("https://authserver.onefinity.ru/signout");
+
     private static final String STORAGE_KEY_ACCESS_TOKEN = "accessToken";
+
     private final Agent agent;
+
     private GameProfile[] profiles;
+
     private String accessToken;
+
     private boolean isOnline;
 
     public YggdrasilUserAuthentication(YggdrasilAuthenticationService authenticationService, Agent agent) {
@@ -42,122 +55,100 @@ public class YggdrasilUserAuthentication extends HttpUserAuthentication {
     }
 
     public boolean canLogIn() {
-        return !this.canPlayOnline() && StringUtils.isNotBlank(this.getUsername()) && (StringUtils.isNotBlank(this.getPassword()) || StringUtils.isNotBlank(this.getAuthenticatedToken()));
+        return (!canPlayOnline() && StringUtils.isNotBlank(getUsername()) && (StringUtils.isNotBlank(getPassword()) || StringUtils.isNotBlank(getAuthenticatedToken())));
     }
 
     public void logIn() throws AuthenticationException {
-        if (StringUtils.isBlank(this.getUsername())) {
+        if (StringUtils.isBlank(getUsername()))
             throw new InvalidCredentialsException("Invalid username");
+        if (StringUtils.isNotBlank(getAuthenticatedToken())) {
+            logInWithToken();
+        } else if (StringUtils.isNotBlank(getPassword())) {
+            logInWithPassword();
         } else {
-            if (StringUtils.isNotBlank(this.getAuthenticatedToken())) {
-                this.logInWithToken();
-            } else {
-                if (!StringUtils.isNotBlank(this.getPassword())) {
-                    throw new InvalidCredentialsException("Invalid password");
-                }
-
-                this.logInWithPassword();
-            }
-
+            throw new InvalidCredentialsException("Invalid password");
         }
     }
 
     protected void logInWithPassword() throws AuthenticationException {
-        if (StringUtils.isBlank(this.getUsername())) {
+        if (StringUtils.isBlank(getUsername()))
             throw new InvalidCredentialsException("Invalid username");
-        } else if (StringUtils.isBlank(this.getPassword())) {
+        if (StringUtils.isBlank(getPassword()))
             throw new InvalidCredentialsException("Invalid password");
-        } else {
-            LOGGER.info("Logging in with username & password");
-            AuthenticationRequest request = new AuthenticationRequest(this, this.getUsername(), this.getPassword());
-            AuthenticationResponse response = (AuthenticationResponse)this.getAuthenticationService().makeRequest(ROUTE_AUTHENTICATE, request, AuthenticationResponse.class);
-            if (!response.getClientToken().equals(this.getAuthenticationService().getClientToken())) {
-                throw new AuthenticationException("Server requested we change our client token. Don't know how to handle this!");
-            } else {
-                if (response.getSelectedProfile() != null) {
-                    this.setUserType(response.getSelectedProfile().isLegacy() ? UserType.LEGACY : UserType.MOJANG);
-                } else if (ArrayUtils.isNotEmpty(response.getAvailableProfiles())) {
-                    this.setUserType(response.getAvailableProfiles()[0].isLegacy() ? UserType.LEGACY : UserType.MOJANG);
-                }
-
-                User user = response.getUser();
-                if (user != null && user.getId() != null) {
-                    this.setUserid(user.getId());
-                } else {
-                    this.setUserid(this.getUsername());
-                }
-
-                this.isOnline = true;
-                this.accessToken = response.getAccessToken();
-                this.profiles = response.getAvailableProfiles();
-                this.setSelectedProfile(response.getSelectedProfile());
-                this.getModifiableUserProperties().clear();
-                this.updateUserProperties(user);
-            }
+        LOGGER.info("Logging in with username & password");
+        AuthenticationRequest request = new AuthenticationRequest(this, getUsername(), getPassword());
+        AuthenticationResponse response = getAuthenticationService().<AuthenticationResponse>makeRequest(ROUTE_AUTHENTICATE, request, AuthenticationResponse.class);
+        if (!response.getClientToken().equals(getAuthenticationService().getClientToken()))
+            throw new AuthenticationException("Server requested we change our client token. Don't know how to handle this!");
+        if (response.getSelectedProfile() != null) {
+            setUserType(response.getSelectedProfile().isLegacy() ? UserType.LEGACY : UserType.MOJANG);
+        } else if (ArrayUtils.isNotEmpty((Object[])response.getAvailableProfiles())) {
+            setUserType(response.getAvailableProfiles()[0].isLegacy() ? UserType.LEGACY : UserType.MOJANG);
         }
+        User user = response.getUser();
+        if (user != null && user.getId() != null) {
+            setUserid(user.getId());
+        } else {
+            setUserid(getUsername());
+        }
+        this.isOnline = true;
+        this.accessToken = response.getAccessToken();
+        this.profiles = response.getAvailableProfiles();
+        setSelectedProfile(response.getSelectedProfile());
+        getModifiableUserProperties().clear();
+        updateUserProperties(user);
     }
 
     protected void updateUserProperties(User user) {
-        if (user != null) {
-            if (user.getProperties() != null) {
-                this.getModifiableUserProperties().putAll(user.getProperties());
-            }
-
-        }
+        if (user == null)
+            return;
+        if (user.getProperties() != null)
+            getModifiableUserProperties().putAll((Multimap)user.getProperties());
     }
 
     protected void logInWithToken() throws AuthenticationException {
-        if (StringUtils.isBlank(this.getUserID())) {
-            if (!StringUtils.isBlank(this.getUsername())) {
+        if (StringUtils.isBlank(getUserID()))
+            if (StringUtils.isBlank(getUsername())) {
+                setUserid(getUsername());
+            } else {
                 throw new InvalidCredentialsException("Invalid uuid & username");
             }
-
-            this.setUserid(this.getUsername());
-        }
-
-        if (StringUtils.isBlank(this.getAuthenticatedToken())) {
+        if (StringUtils.isBlank(getAuthenticatedToken()))
             throw new InvalidCredentialsException("Invalid access token");
-        } else {
-            LOGGER.info("Logging in with access token");
-            if (this.checkTokenValidity()) {
-                LOGGER.debug("Skipping refresh call as we're safely logged in.");
-                this.isOnline = true;
-            } else {
-                RefreshRequest request = new RefreshRequest(this);
-                RefreshResponse response = (RefreshResponse)this.getAuthenticationService().makeRequest(ROUTE_REFRESH, request, RefreshResponse.class);
-                if (!response.getClientToken().equals(this.getAuthenticationService().getClientToken())) {
-                    throw new AuthenticationException("Server requested we change our client token. Don't know how to handle this!");
-                } else {
-                    if (response.getSelectedProfile() != null) {
-                        this.setUserType(response.getSelectedProfile().isLegacy() ? UserType.LEGACY : UserType.MOJANG);
-                    } else if (ArrayUtils.isNotEmpty(response.getAvailableProfiles())) {
-                        this.setUserType(response.getAvailableProfiles()[0].isLegacy() ? UserType.LEGACY : UserType.MOJANG);
-                    }
-
-                    if (response.getUser() != null && response.getUser().getId() != null) {
-                        this.setUserid(response.getUser().getId());
-                    } else {
-                        this.setUserid(this.getUsername());
-                    }
-
-                    this.isOnline = true;
-                    this.accessToken = response.getAccessToken();
-                    this.profiles = response.getAvailableProfiles();
-                    this.setSelectedProfile(response.getSelectedProfile());
-                    this.getModifiableUserProperties().clear();
-                    this.updateUserProperties(response.getUser());
-                }
-            }
+        LOGGER.info("Logging in with access token");
+        if (checkTokenValidity()) {
+            LOGGER.debug("Skipping refresh call as we're safely logged in.");
+            this.isOnline = true;
+            return;
         }
+        RefreshRequest request = new RefreshRequest(this);
+        RefreshResponse response = getAuthenticationService().<RefreshResponse>makeRequest(ROUTE_REFRESH, request, RefreshResponse.class);
+        if (!response.getClientToken().equals(getAuthenticationService().getClientToken()))
+            throw new AuthenticationException("Server requested we change our client token. Don't know how to handle this!");
+        if (response.getSelectedProfile() != null) {
+            setUserType(response.getSelectedProfile().isLegacy() ? UserType.LEGACY : UserType.MOJANG);
+        } else if (ArrayUtils.isNotEmpty((Object[])response.getAvailableProfiles())) {
+            setUserType(response.getAvailableProfiles()[0].isLegacy() ? UserType.LEGACY : UserType.MOJANG);
+        }
+        if (response.getUser() != null && response.getUser().getId() != null) {
+            setUserid(response.getUser().getId());
+        } else {
+            setUserid(getUsername());
+        }
+        this.isOnline = true;
+        this.accessToken = response.getAccessToken();
+        this.profiles = response.getAvailableProfiles();
+        setSelectedProfile(response.getSelectedProfile());
+        getModifiableUserProperties().clear();
+        updateUserProperties(response.getUser());
     }
 
     protected boolean checkTokenValidity() throws AuthenticationException {
         ValidateRequest request = new ValidateRequest(this);
-
         try {
-            this.getAuthenticationService().makeRequest(ROUTE_VALIDATE, request, Response.class);
+            getAuthenticationService().makeRequest(ROUTE_VALIDATE, request, Response.class);
             return true;
-        } catch (AuthenticationException var3) {
+        } catch (AuthenticationException ignored) {
             return false;
         }
     }
@@ -178,27 +169,23 @@ public class YggdrasilUserAuthentication extends HttpUserAuthentication {
     }
 
     public boolean canPlayOnline() {
-        return this.isLoggedIn() && this.getSelectedProfile() != null && this.isOnline;
+        return (isLoggedIn() && getSelectedProfile() != null && this.isOnline);
     }
 
     public void selectGameProfile(GameProfile profile) throws AuthenticationException {
-        if (!this.isLoggedIn()) {
+        if (!isLoggedIn())
             throw new AuthenticationException("Cannot change game profile whilst not logged in");
-        } else if (this.getSelectedProfile() != null) {
+        if (getSelectedProfile() != null)
             throw new AuthenticationException("Cannot change game profile. You must log out and back in.");
-        } else if (profile != null && ArrayUtils.contains(this.profiles, profile)) {
-            RefreshRequest request = new RefreshRequest(this, profile);
-            RefreshResponse response = (RefreshResponse)this.getAuthenticationService().makeRequest(ROUTE_REFRESH, request, RefreshResponse.class);
-            if (!response.getClientToken().equals(this.getAuthenticationService().getClientToken())) {
-                throw new AuthenticationException("Server requested we change our client token. Don't know how to handle this!");
-            } else {
-                this.isOnline = true;
-                this.accessToken = response.getAccessToken();
-                this.setSelectedProfile(response.getSelectedProfile());
-            }
-        } else {
+        if (profile == null || !ArrayUtils.contains((Object[])this.profiles, profile))
             throw new IllegalArgumentException("Invalid profile '" + profile + "'");
-        }
+        RefreshRequest request = new RefreshRequest(this, profile);
+        RefreshResponse response = getAuthenticationService().<RefreshResponse>makeRequest(ROUTE_REFRESH, request, RefreshResponse.class);
+        if (!response.getClientToken().equals(getAuthenticationService().getClientToken()))
+            throw new AuthenticationException("Server requested we change our client token. Don't know how to handle this!");
+        this.isOnline = true;
+        this.accessToken = response.getAccessToken();
+        setSelectedProfile(response.getSelectedProfile());
     }
 
     public void loadFromStorage(Map<String, Object> credentials) {
@@ -208,17 +195,16 @@ public class YggdrasilUserAuthentication extends HttpUserAuthentication {
 
     public Map<String, Object> saveForStorage() {
         Map<String, Object> result = super.saveForStorage();
-        if (StringUtils.isNotBlank(this.getAuthenticatedToken())) {
-            result.put("accessToken", this.getAuthenticatedToken());
-        }
-
+        if (StringUtils.isNotBlank(getAuthenticatedToken()))
+            result.put("accessToken", getAuthenticatedToken());
         return result;
     }
 
-    /** @deprecated */
     @Deprecated
     public String getSessionToken() {
-        return this.isLoggedIn() && this.getSelectedProfile() != null && this.canPlayOnline() ? String.format("token:%s:%s", this.getAuthenticatedToken(), this.getSelectedProfile().getId()) : null;
+        if (isLoggedIn() && getSelectedProfile() != null && canPlayOnline())
+            return String.format("token:%s:%s", new Object[] { getAuthenticatedToken(), getSelectedProfile().getId() });
+        return null;
     }
 
     public String getAuthenticatedToken() {
@@ -230,7 +216,16 @@ public class YggdrasilUserAuthentication extends HttpUserAuthentication {
     }
 
     public String toString() {
-        return "YggdrasilAuthenticationService{agent=" + this.agent + ", profiles=" + Arrays.toString(this.profiles) + ", selectedProfile=" + this.getSelectedProfile() + ", username='" + this.getUsername() + '\'' + ", isLoggedIn=" + this.isLoggedIn() + ", userType=" + this.getUserType() + ", canPlayOnline=" + this.canPlayOnline() + ", accessToken='" + this.accessToken + '\'' + ", clientToken='" + this.getAuthenticationService().getClientToken() + '\'' + '}';
+        return "YggdrasilAuthenticationService{agent=" + this.agent + ", profiles=" +
+
+                Arrays.toString((Object[])this.profiles) + ", selectedProfile=" +
+                getSelectedProfile() + ", username='" +
+                getUsername() + '\'' + ", isLoggedIn=" +
+                isLoggedIn() + ", userType=" +
+                getUserType() + ", canPlayOnline=" +
+                canPlayOnline() + ", accessToken='" + this.accessToken + '\'' + ", clientToken='" +
+
+                getAuthenticationService().getClientToken() + '\'' + '}';
     }
 
     public YggdrasilAuthenticationService getAuthenticationService() {

@@ -1,1 +1,1 @@
-gradlew build
+gradlew build -Dorg.gradle.java.home="jdk1.8.0_202"
