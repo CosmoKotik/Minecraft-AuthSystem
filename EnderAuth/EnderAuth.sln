@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32519.111
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnderAuth", "EnderAuth.csproj", "{52E8AEEA-8869-45D8-B288-04640857B078}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52E8AEEA-8869-45D8-B288-04640857B078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E8AEEA-8869-45D8-B288-04640857B078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E8AEEA-8869-45D8-B288-04640857B078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E8AEEA-8869-45D8-B288-04640857B078}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7B0FA8D-E2B6-434E-84A9-851B10AE6170}
+	EndGlobalSection
+EndGlobal
