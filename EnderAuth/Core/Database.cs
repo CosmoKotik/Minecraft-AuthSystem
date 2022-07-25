@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace EnderAuth.Core
@@ -11,30 +12,28 @@ namespace EnderAuth.Core
             
         }
 
-        public static string Select()
+        public static string[] Select(string columnName, string select = "SELECT username from users")
         {
             string connectionString = "server=" + Environment.GetEnvironmentVariable("db_ip") +
                           ";uid=" + Environment.GetEnvironmentVariable("db_username") +
                           ";pwd=" + Environment.GetEnvironmentVariable("db_password") +
                           ";database=" + Environment.GetEnvironmentVariable("database");
 
-            string[] result = { };
+            List<string> result = new List<string>();
 
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                using (var cmd = new MySqlCommand("SELECT username from users", conn))
+                using (var cmd = new MySqlCommand(select, conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
-                        int i = 0;
                         while (reader.Read())
                         {
-                            result[i] = reader.GetString(i);
-                            i = i + 1;
+                            result.Add(reader.GetString(columnName));
                         }
 
-                        return result.ToString();
+                        return result.ToArray();
                     }
                 }
             }

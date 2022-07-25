@@ -60,7 +60,17 @@ namespace EnderAuth.Controllers
             ar.availableProfiles.Add(ap);
             ar.selectedProfiles = sp;
 
-            return Database.Select();
+            string[] usernames = Database.Select("username");
+
+            foreach (string player in usernames)
+            {
+                if (player == value.username)
+                { 
+                    
+                }
+            }
+
+            return Database.Select("username")[1];
         }
     }
 }
