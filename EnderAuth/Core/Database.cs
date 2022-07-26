@@ -12,12 +12,14 @@ namespace EnderAuth.Core
             
         }
 
-        public static string[] Select(string columnName, string select = "SELECT username from users")
+        public static string[] Select(string columnName, string table = "users")
         {
             string connectionString = "server=" + Environment.GetEnvironmentVariable("db_ip") +
                           ";uid=" + Environment.GetEnvironmentVariable("db_username") +
                           ";pwd=" + Environment.GetEnvironmentVariable("db_password") +
                           ";database=" + Environment.GetEnvironmentVariable("database");
+            
+            string select = "SELECT " + columnName + " from " + table;
 
             List<string> result = new List<string>();
 
