@@ -18,9 +18,9 @@ import org.apache.logging.log4j.Logger;
 public class YggdrasilGameProfileRepository implements GameProfileRepository {
     private static final Logger LOGGER = LogManager.getLogger();
 
-    private static final String BASE_URL = "http://10.0.1.3/api/";
+    private static final String BASE_URL = "http://localhost:29657/api/";
 
-    private static final String SEARCH_PAGE_URL = "http://10.0.1.3/api/profiles/";
+    private static final String SEARCH_PAGE_URL = "http://localhost:29657/api/profiles/";
 
     private static final int ENTRIES_PER_PAGE = 2;
 
@@ -48,7 +48,7 @@ public class YggdrasilGameProfileRepository implements GameProfileRepository {
             while (true) {
                 boolean failed = false;
                 try {
-                    ProfileSearchResultsResponse response = this.authenticationService.<ProfileSearchResultsResponse>makeRequest(HttpAuthenticationService.constantURL("http://10.0.1.3/api/profiles/" + agent.getName().toLowerCase()), request, ProfileSearchResultsResponse.class);
+                    ProfileSearchResultsResponse response = this.authenticationService.<ProfileSearchResultsResponse>makeRequest(HttpAuthenticationService.constantURL("http://localhost:29657/api/profiles/" + agent.getName().toLowerCase()), request, ProfileSearchResultsResponse.class);
                     failCount = 0;
                     LOGGER.debug("Page {} returned {} results, parsing", Integer.valueOf(0), Integer.valueOf((response.getProfiles()).length));
                     Set<String> missing = Sets.newHashSet(request);

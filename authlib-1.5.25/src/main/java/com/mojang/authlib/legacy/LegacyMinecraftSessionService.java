@@ -14,11 +14,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LegacyMinecraftSessionService extends HttpMinecraftSessionService {
-    private static final String BASE_URL = "http://10.0.1.3/session/game/";
+    private static final String BASE_URL = "http://localhost:29657/session/game/";
 
-    private static final URL JOIN_URL = HttpAuthenticationService.constantURL("http://10.0.1.3/session/game/joinserver.jsp");
+    private static final URL JOIN_URL = HttpAuthenticationService.constantURL("http://localhost:29657/session/game/joinserver.jsp");
 
-    private static final URL CHECK_URL = HttpAuthenticationService.constantURL("http://10.0.1.3/session/game/checkserver.jsp");
+    private static final URL CHECK_URL = HttpAuthenticationService.constantURL("http://localhost:29657/session/game/checkserver.jsp");
 
     protected LegacyMinecraftSessionService(LegacyAuthenticationService authenticationService) {
         super(authenticationService);

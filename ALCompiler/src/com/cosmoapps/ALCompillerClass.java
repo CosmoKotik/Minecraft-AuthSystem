@@ -55,7 +55,8 @@ public class ALCompillerClass {
         fileContents = Files.readAllLines(Paths.get(filePath));
         String[] separated = ipAddr.split("\\.");
         //System.out.println(separated.length);
-        fileContents.set(43, "    private static final String[] WHITELISTED_DOMAINS = new String[] { \"." + separated[separated.length - 2] + "." + separated[separated.length - 1] + "\", \".minecraft.net\", \".mojang.com\" };");
+        //fileContents.set(43, "    private static final String[] WHITELISTED_DOMAINS = new String[] { \"." + separated[separated.length - 2] + "." + separated[separated.length - 1] + "\", \".minecraft.net\", \".mojang.com\" };");
+        fileContents.set(43, "    private static final String[] WHITELISTED_DOMAINS = new String[] { \"" + ipAddr + "\", \".minecraft.net\", \".mojang.com\" };");
         fileContents.set(47, "    private static final String BASE_URL = \"" + httpS + "://" + ipAddr + "/sessionserver/session/minecraft/\";");
         fileContents.set(49, "    private static final URL JOIN_URL = HttpAuthenticationService.constantURL(\"" + httpS + "://" + ipAddr + "/sessionserver/session/minecraft/join" + fileExt + "\");");
         fileContents.set(51, "    private static final URL CHECK_URL = HttpAuthenticationService.constantURL(\"" + httpS + "://" + ipAddr + "/sessionserver/session/minecraft/hasJoined" + fileExt + "\");");

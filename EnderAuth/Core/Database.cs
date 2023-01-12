@@ -30,9 +30,15 @@ namespace EnderAuth.Core
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
+                        int i = 0;
                         while (reader.Read())
                         {
-                            result.Add(reader.GetString(columnName));
+                            if (!Convert.IsDBNull(reader[columnName]))
+                                result.Add(reader.GetString(columnName));
+                            else    
+                                result.Add(null);
+                            
+                            i++;
                         }
 
                         return result.ToArray();

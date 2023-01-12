@@ -11,10 +11,16 @@ using Newtonsoft.Json;
 
 namespace EnderAuth.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
+    [ApiController]
     public class AuthenticateController : ControllerBase
     {
+        private readonly ILogger _logger;
+        public AuthenticateController(ILogger<AuthenticateController> logger)
+        {
+            _logger = logger;
+        }
+
         // GET: api/<AuthenticationController>
         [HttpGet]
         public Error Get()
@@ -36,8 +42,8 @@ namespace EnderAuth.Controllers
             string[] uuids = Database.Select("uuid");
 
             //Getting from minecraft users database
-            string[] clientTokens = Database.Select("clientToken", "mcusers");
-            string[] accessTokens = Database.Select("accessToken", "mcusers");
+            string[] clientTokens = Database.Select("clientToken");
+            string[] accessTokens = Database.Select("accessToken");
             
             object result = null;
 
@@ -54,13 +60,15 @@ namespace EnderAuth.Controllers
                 if (player == value.username &&
                     passwordHash == Encryption.HashPassword(value.password))
                 {
-                    result = CreateResponse(player, passwordHash, email, remoteID, uuid, clientToken, accessToken);
+                    result = CreateResponse(player, passwordHash, email, remoteID, uuid, clientToken, accessToken, value.requestUser);
+                    _logger.LogInformation(player + " auntentication attemp with password succed. PasswordHash: " + passwordHash + " JSON; " + JsonConvert.SerializeObject(result));
                     return result;
                 }
                 else if (player == value.username &&
                          clientToken == value.clientToken)
                 {
-                    result = CreateResponse(player, passwordHash, email, remoteID, uuid, clientToken, accessToken);
+                    result = CreateResponse(player, passwordHash, email, remoteID, uuid, clientToken, accessToken, value.requestUser);
+                    _logger.LogInformation(player + " auntentication attempt with token succed. Token: " + clientToken + " JSON; " + JsonConvert.SerializeObject(result));
                     return result;
                 }
                 else
@@ -68,7 +76,7 @@ namespace EnderAuth.Controllers
                     Error er = new Error();
                     er.error = "ForbiddenOperationException";
                     er.errorMessage = "Invalid credentials. Invalid username or password.";
-
+                    _logger.LogInformation(player + " failed to authenticate passwordHash: " + passwordHash + " JSON: " + JsonConvert.SerializeObject(CreateResponse(player, passwordHash, email, remoteID, uuid, clientToken, accessToken, value.requestUser)));
                     result = er;
                 }
             }
@@ -76,7 +84,7 @@ namespace EnderAuth.Controllers
             return result;
         }
 
-        private AuthenticateResponse CreateResponse(string username, string passwordhash, string email, string remoteID, string uuid, string clientToken, string accessToken)
+        private AuthenticateResponse CreateResponse(string username, string passwordhash, string email, string remoteID, string uuid, string clientToken, string accessToken, bool requestUser)
         {
             Properties preferredLanguage = new Properties();
             preferredLanguage.name = "preferredLanguage";
@@ -86,12 +94,17 @@ namespace EnderAuth.Controllers
             registrationCountry.name = "registrationCountry";
             registrationCountry.value = "US";
 
-            User usr = new User();
-            usr.username = email;
-            usr.id = remoteID;
-            usr.properties = new List<Properties>();
-            usr.properties.Add(preferredLanguage);
-            usr.properties.Add(registrationCountry);
+            User usr = null;
+
+            if (requestUser)
+            {
+                usr = new User();
+                usr.username = email;
+                usr.id = remoteID;
+                usr.properties = new List<Properties>();
+                usr.properties.Add(preferredLanguage);
+                usr.properties.Add(registrationCountry);
+            }
 
             AvailableProfiles ap = new AvailableProfiles();
             ap.name = username;

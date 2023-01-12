@@ -15,7 +15,7 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 
 public class LegacyUserAuthentication extends HttpUserAuthentication {
-    private static final URL AUTHENTICATION_URL = HttpAuthenticationService.constantURL("http://10.0.1.3/login/");
+    private static final URL AUTHENTICATION_URL = HttpAuthenticationService.constantURL("http://localhost:29657/login/");
 
     private static final int AUTHENTICATION_VERSION = 14;
 

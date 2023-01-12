@@ -41,15 +41,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class YggdrasilMinecraftSessionService extends HttpMinecraftSessionService {
-    private static final String[] WHITELISTED_DOMAINS = new String[] { ".1.3", ".minecraft.net", ".mojang.com" };
+    private static final String[] WHITELISTED_DOMAINS = new String[] { "localhost:29657", ".minecraft.net", ".mojang.com" };
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    private static final String BASE_URL = "http://10.0.1.3/sessionserver/session/minecraft/";
+    private static final String BASE_URL = "http://localhost:29657/sessionserver/session/minecraft/";
 
-    private static final URL JOIN_URL = HttpAuthenticationService.constantURL("http://10.0.1.3/sessionserver/session/minecraft/join");
+    private static final URL JOIN_URL = HttpAuthenticationService.constantURL("http://localhost:29657/sessionserver/session/minecraft/join");
 
-    private static final URL CHECK_URL = HttpAuthenticationService.constantURL("http://10.0.1.3/sessionserver/session/minecraft/hasJoined");
+    private static final URL CHECK_URL = HttpAuthenticationService.constantURL("http://localhost:29657/sessionserver/session/minecraft/hasJoined");
 
     private final PublicKey publicKey;
 
@@ -148,7 +148,7 @@ public class YggdrasilMinecraftSessionService extends HttpMinecraftSessionServic
 
     protected GameProfile fillGameProfile(GameProfile profile, boolean requireSecure) {
         try {
-            URL url = HttpAuthenticationService.constantURL("http://10.0.1.3/sessionserver/session/minecraft/profile/" + UUIDTypeAdapter.fromUUID(profile.getId()));
+            URL url = HttpAuthenticationService.constantURL("http://localhost:29657/sessionserver/session/minecraft/profile/" + UUIDTypeAdapter.fromUUID(profile.getId()));
             url = HttpAuthenticationService.concatenateURL(url, "unsigned=" + (!requireSecure ? 1 : 0));
             MinecraftProfilePropertiesResponse response = getAuthenticationService().<MinecraftProfilePropertiesResponse>makeRequest(url, null, MinecraftProfilePropertiesResponse.class);
             if (response == null) {

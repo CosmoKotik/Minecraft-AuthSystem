@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,11 @@ namespace EnderAuth
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddControllers().AddJsonOptions(options => {
+                options.JsonSerializerOptions.IgnoreNullValues = true;
+            });
+
             services.AddControllers();
         }
 
@@ -35,8 +41,9 @@ namespace EnderAuth
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
+            
+            //app.UseHttpLogging();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -45,6 +52,12 @@ namespace EnderAuth
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.Use(async (context, next) =>
+            {
+                context.Response.Headers.Add("x-my-custom-header", "middleware response");
+                await next();
             });
         }
     }

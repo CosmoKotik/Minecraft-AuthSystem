@@ -27,17 +27,17 @@ import org.apache.logging.log4j.Logger;
 public class YggdrasilUserAuthentication extends HttpUserAuthentication {
     private static final Logger LOGGER = LogManager.getLogger();
 
-    private static final String BASE_URL = "http://10.0.1.3/";
+    private static final String BASE_URL = "http://localhost:29657/";
 
-    private static final URL ROUTE_AUTHENTICATE = HttpAuthenticationService.constantURL("http://10.0.1.3/authenticate");
+    private static final URL ROUTE_AUTHENTICATE = HttpAuthenticationService.constantURL("http://localhost:29657/authenticate");
 
-    private static final URL ROUTE_REFRESH = HttpAuthenticationService.constantURL("http://10.0.1.3/refresh");
+    private static final URL ROUTE_REFRESH = HttpAuthenticationService.constantURL("http://localhost:29657/refresh");
 
-    private static final URL ROUTE_VALIDATE = HttpAuthenticationService.constantURL("http://10.0.1.3/validate");
+    private static final URL ROUTE_VALIDATE = HttpAuthenticationService.constantURL("http://localhost:29657/validate");
 
-    private static final URL ROUTE_INVALIDATE = HttpAuthenticationService.constantURL("http://10.0.1.3/invalidate");
+    private static final URL ROUTE_INVALIDATE = HttpAuthenticationService.constantURL("http://localhost:29657/invalidate");
 
-    private static final URL ROUTE_SIGNOUT = HttpAuthenticationService.constantURL("http://10.0.1.3/signout");
+    private static final URL ROUTE_SIGNOUT = HttpAuthenticationService.constantURL("http://localhost:29657/signout");
 
     private static final String STORAGE_KEY_ACCESS_TOKEN = "accessToken";
 

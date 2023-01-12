@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using Newtonsoft.Json;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace EnderAuth.Core
@@ -21,6 +22,24 @@ namespace EnderAuth.Core
                 }
                 return sb.ToString().ToLower();
             }
+        }
+
+        public static string Base64Encode(object obj)
+        {
+            string json = "";
+            
+            if (!obj.GetType().IsGenericType)
+                json = JsonConvert.SerializeObject(obj);
+            else json = obj.ToString();
+
+            var jsonBytes = System.Text.Encoding.UTF8.GetBytes(json);
+            return System.Convert.ToBase64String(jsonBytes);
+        }
+
+        public static string Base64Decode(string base64EncodedData)
+        {
+            var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
         }
     }
 }

@@ -1,7 +1,7 @@
 com/mojang/authlib/exceptions/AuthenticationException.java
  com.mojang.authlib.exceptions.AuthenticationException
-com/mojang/authlib/ProfileLookupCallback.java
- com.mojang.authlib.ProfileLookupCallback
+com/mojang/authlib/legacy/LegacyMinecraftSessionService.java
+ com.mojang.authlib.legacy.LegacyMinecraftSessionService
 com/mojang/authlib/minecraft/InsecureTextureException.java
  com.mojang.authlib.minecraft.InsecureTextureException
  com.mojang.authlib.minecraft.InsecureTextureException$MissingTextureException
@@ -17,11 +17,10 @@ com/mojang/authlib/yggdrasil/response/MinecraftProfilePropertiesResponse.java
  com.mojang.authlib.yggdrasil.response.MinecraftProfilePropertiesResponse
 com/mojang/authlib/GameProfileRepository.java
  com.mojang.authlib.GameProfileRepository
-com/mojang/authlib/yggdrasil/response/ProfileSearchResultsResponse.java
- com.mojang.authlib.yggdrasil.response.ProfileSearchResultsResponse
- com.mojang.authlib.yggdrasil.response.ProfileSearchResultsResponse$Serializer
-com/mojang/authlib/yggdrasil/response/Response.java
- com.mojang.authlib.yggdrasil.response.Response
+com/mojang/authlib/legacy/LegacyUserAuthentication.java
+ com.mojang.authlib.legacy.LegacyUserAuthentication
+com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.java
+ com.mojang.authlib.yggdrasil.YggdrasilGameProfileRepository
 com/mojang/authlib/yggdrasil/response/MinecraftTexturesPayload.java
  com.mojang.authlib.yggdrasil.response.MinecraftTexturesPayload
 com/mojang/authlib/properties/PropertyMap.java
@@ -35,16 +34,19 @@ com/mojang/authlib/yggdrasil/response/User.java
  com.mojang.authlib.yggdrasil.response.User
 com/mojang/authlib/exceptions/AuthenticationUnavailableException.java
  com.mojang.authlib.exceptions.AuthenticationUnavailableException
-com/mojang/authlib/yggdrasil/response/AuthenticationResponse.java
- com.mojang.authlib.yggdrasil.response.AuthenticationResponse
+com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService.java
+ com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService
+ com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1
 com/mojang/authlib/HttpUserAuthentication.java
  com.mojang.authlib.HttpUserAuthentication
-com/mojang/authlib/properties/Property.java
- com.mojang.authlib.properties.Property
+com/mojang/authlib/yggdrasil/YggdrasilAuthenticationService.java
+ com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService
+ com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService$1
+ com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService$GameProfileSerializer
 com/mojang/authlib/yggdrasil/ProfileIncompleteException.java
  com.mojang.authlib.yggdrasil.ProfileIncompleteException
-com/mojang/authlib/HttpAuthenticationService.java
- com.mojang.authlib.HttpAuthenticationService
+com/mojang/authlib/yggdrasil/request/ValidateRequest.java
+ com.mojang.authlib.yggdrasil.request.ValidateRequest
 com/mojang/authlib/Agent.java
  com.mojang.authlib.Agent
 com/mojang/authlib/GameProfile.java
@@ -55,12 +57,12 @@ com/mojang/authlib/exceptions/UserMigratedException.java
  com.mojang.authlib.exceptions.UserMigratedException
 com/mojang/authlib/yggdrasil/request/JoinMinecraftServerRequest.java
  com.mojang.authlib.yggdrasil.request.JoinMinecraftServerRequest
-com/mojang/authlib/minecraft/MinecraftSessionService.java
- com.mojang.authlib.minecraft.MinecraftSessionService
+com/mojang/authlib/legacy/LegacyAuthenticationService.java
+ com.mojang.authlib.legacy.LegacyAuthenticationService
 com/mojang/authlib/exceptions/InvalidCredentialsException.java
  com.mojang.authlib.exceptions.InvalidCredentialsException
-com/mojang/authlib/yggdrasil/response/HasJoinedMinecraftServerResponse.java
- com.mojang.authlib.yggdrasil.response.HasJoinedMinecraftServerResponse
+com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.java
+ com.mojang.authlib.yggdrasil.YggdrasilUserAuthentication
 com/mojang/authlib/AuthenticationService.java
  com.mojang.authlib.AuthenticationService
 com/mojang/authlib/minecraft/HttpMinecraftSessionService.java
@@ -70,32 +72,30 @@ com/mojang/authlib/yggdrasil/ProfileNotFoundException.java
 com/mojang/authlib/minecraft/MinecraftProfileTexture.java
  com.mojang.authlib.minecraft.MinecraftProfileTexture
  com.mojang.authlib.minecraft.MinecraftProfileTexture$Type
-com/mojang/util/UUIDTypeAdapter.java
- com.mojang.util.UUIDTypeAdapter
-com/mojang/authlib/yggdrasil/response/RefreshResponse.java
- com.mojang.authlib.yggdrasil.response.RefreshResponse
 com/mojang/authlib/yggdrasil/request/AuthenticationRequest.java
  com.mojang.authlib.yggdrasil.request.AuthenticationRequest
-com/mojang/authlib/legacy/LegacyMinecraftSessionService.java
- com.mojang.authlib.legacy.LegacyMinecraftSessionService
-com/mojang/authlib/yggdrasil/YggdrasilMinecraftSessionService.java
- com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService
- com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1
-com/mojang/authlib/legacy/LegacyAuthenticationService.java
- com.mojang.authlib.legacy.LegacyAuthenticationService
-com/mojang/authlib/legacy/LegacyUserAuthentication.java
- com.mojang.authlib.legacy.LegacyUserAuthentication
+com/mojang/authlib/yggdrasil/response/RefreshResponse.java
+ com.mojang.authlib.yggdrasil.response.RefreshResponse
+com/mojang/authlib/HttpAuthenticationService.java
+ com.mojang.authlib.HttpAuthenticationService
+com/mojang/authlib/minecraft/MinecraftSessionService.java
+ com.mojang.authlib.minecraft.MinecraftSessionService
+com/mojang/authlib/yggdrasil/response/HasJoinedMinecraftServerResponse.java
+ com.mojang.authlib.yggdrasil.response.HasJoinedMinecraftServerResponse
+com/mojang/authlib/properties/Property.java
+ com.mojang.authlib.properties.Property
 com/mojang/authlib/yggdrasil/request/InvalidateRequest.java
  com.mojang.authlib.yggdrasil.request.InvalidateRequest
-com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.java
- com.mojang.authlib.yggdrasil.YggdrasilGameProfileRepository
-com/mojang/authlib/yggdrasil/YggdrasilAuthenticationService.java
- com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService
- com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService$1
- com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService$GameProfileSerializer
-com/mojang/authlib/yggdrasil/YggdrasilUserAuthentication.java
- com.mojang.authlib.yggdrasil.YggdrasilUserAuthentication
+com/mojang/authlib/yggdrasil/response/Response.java
+ com.mojang.authlib.yggdrasil.response.Response
+com/mojang/authlib/yggdrasil/response/ProfileSearchResultsResponse.java
+ com.mojang.authlib.yggdrasil.response.ProfileSearchResultsResponse
+ com.mojang.authlib.yggdrasil.response.ProfileSearchResultsResponse$Serializer
 com/mojang/authlib/yggdrasil/request/RefreshRequest.java
  com.mojang.authlib.yggdrasil.request.RefreshRequest
-com/mojang/authlib/yggdrasil/request/ValidateRequest.java
- com.mojang.authlib.yggdrasil.request.ValidateRequest
+com/mojang/authlib/yggdrasil/response/AuthenticationResponse.java
+ com.mojang.authlib.yggdrasil.response.AuthenticationResponse
+com/mojang/authlib/ProfileLookupCallback.java
+ com.mojang.authlib.ProfileLookupCallback
+com/mojang/util/UUIDTypeAdapter.java
+ com.mojang.util.UUIDTypeAdapter
